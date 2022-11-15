@@ -17,7 +17,7 @@ const Products = () => {
 	const { modal, open, close } = useContext(ModalContext);
 
 	return (
-		<div className='container mx-auto max-w-2xl pt-5'>
+		<div className='container mx-auto max-w-[1170px] pt-5'>
 			{loading && <Loader />}
 			{error && <ErrorMessage errMsg='Loading products error' />}
 			{products?.map((product) => (

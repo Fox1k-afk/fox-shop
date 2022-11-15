@@ -1,0 +1,51 @@
+.main_container_top {
+	@apply max-w-[1210px] w-full mx-auto flex justify-center py-[3px] px-[20px];
+}
+
+.nav_container_top {
+	@apply pr-[10px] flex items-center justify-between mr-auto cursor-pointer;
+}
+
+.nav_up_link {
+	@apply mr-[18px] z-[3];
+}
+
+.nav_span {
+	@apply font-sans text-[9px] tracking-[1.2px] uppercase font-medium whitespace-nowrap text-[#6d6d6d] hover:text-blue-400;
+}
+
+.icon_buttons {
+	@apply flex items-center justify-between;
+}
+
+.phones_container {
+	@apply flex items-center mr-[15px] relative z-10;
+}
+
+.phones {
+	@apply flex flex-row;
+}
+
+.phone_link {
+	@apply font-sans text-black text-[13px] font-normal whitespace-nowrap ml-[18px] mt-[1px];
+}
+
+.working_hours {
+	@apply absolute bg-white text-black top-[30px] -left-[9px] w-[142px] px-[15px] py-[15px] shadow-md;
+}
+
+.workking_hours_label {
+	@apply font-sans font-medium text-[11px] uppercase tracking-[1.2px];
+}
+
+.working_hours_hours {
+	@apply font-sans mt-[7px] font-light text-[25px];
+}
+
+.working_hours_hours span {
+	@apply text-[12px] align-super;
+}
+
+.working_sunday {
+	@apply text-[12px] mt-[10px];
+}
