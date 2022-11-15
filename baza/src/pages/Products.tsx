@@ -6,17 +6,21 @@ import Loader from '../components/Loader';
 import Modal from '../components/Modal';
 import Product from '../components/Product';
 import { ModalContext } from '../context/ModalContext';
-import { useProducts } from '../hooks/product';
+import { shopAPI } from '../services/ShopService';
 
 const Products = () => {
-	const { loading, error, products } = useProducts();
+	const {
+		data: products,
+		error,
+		isLoading: loading,
+	} = shopAPI.useFetchAllProductsQuery(10);
 	const { modal, open, close } = useContext(ModalContext);
 
 	return (
 		<div className='container mx-auto max-w-2xl pt-5'>
 			{loading && <Loader />}
-			{error && <ErrorMessage error={error} />}
-			{products.map((product) => (
+			{error && <ErrorMessage errMsg='Loading products error' />}
+			{products?.map((product) => (
 				<Product product={product} key={product.id} />
 			))}
 

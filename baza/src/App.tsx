@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Products from './pages/Products';
-import About from './pages/About';
+
 import Navigation from './components/Navigation';
+import About from './pages/About';
+import Products from './pages/Products';
 
 const App = () => {
 	return (

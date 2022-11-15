@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { IProduct } from '../models';
+import React, { FC, useState } from 'react';
+
+import { IProduct } from '../models/IProduct';
 
 interface ProductProps {
 	product: IProduct;
 }
 
-const Product = ({ product }: ProductProps) => {
+const Product: FC<ProductProps> = ({ product }) => {
 	const [details, setDatails] = useState(false);
 
 	const btnBgClassName = details ? 'bg-blue-400' : 'bg-yellow-400';

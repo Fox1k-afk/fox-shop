@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 
 interface ErroMessageProps {
-	error: string;
+	errMsg: string;
 }
 
-const ErrorMessage: FC<ErroMessageProps> = ({ error }) => {
-	return <p className=' text-center text-red-600'>{error}</p>;
+const ErrorMessage: FC<ErroMessageProps> = ({ errMsg }) => {
+	return <p className=' text-center text-red-600'>{errMsg}</p>;
 };
 
 export default ErrorMessage;
