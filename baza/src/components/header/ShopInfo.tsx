@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import phoneSvg from '../../svg/phone-call-svgrepo-com.svg';
 import styles from './ShopInfo.module.css';
 
@@ -9,33 +11,33 @@ const ShopInfo = () => {
 		<div className={styles.main_container_top}>
 			<div className={styles.nav_container_top}>
 				<div className={styles.nav_up_link}>
-					<a href='#'>
+					<Link to={'/about'}>
 						<span className={styles.nav_span}>News & feedback</span>
-					</a>
+					</Link>
 				</div>
 
 				<div className={styles.nav_up_link}>
-					<a href='#'>
+					<Link to={'/'}>
 						<span className={styles.nav_span}>Store</span>
-					</a>
+					</Link>
 				</div>
 
 				<div className={styles.nav_up_link}>
-					<a href='#'>
+					<Link to={'/'}>
 						<span className={styles.nav_span}>About us</span>
-					</a>
+					</Link>
 				</div>
 
 				<div className={styles.nav_up_link}>
-					<a href='#'>
+					<Link to={'/'}>
 						<span className={styles.nav_span}>delivery, payment, return</span>
-					</a>
+					</Link>
 				</div>
 
 				<div>
-					<a href='#'>
+					<Link to={'/'}>
 						<span className={styles.nav_span}>Work in a company</span>
-					</a>
+					</Link>
 				</div>
 			</div>
 
@@ -46,7 +48,7 @@ const ShopInfo = () => {
 			>
 				<div className={styles.phones_container}>
 					<div>
-						<img src={phoneSvg} alt='svg' className=' w-[20px]' />
+						<img src={phoneSvg} alt='svg' className='w-[20px]' />
 					</div>
 					<div className={styles.working_hours_container}>
 						<div className={styles.phones}>

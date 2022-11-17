@@ -1,0 +1,79 @@
+.wrapper {
+	@apply bg-black flex justify-center;
+}
+
+.main_container {
+	@apply max-w-[1210px] w-full bg-black;
+}
+
+.container {
+	@apply w-full h-[90px] my-0 mx-auto py-0 px-[20px] flex items-center justify-between relative;
+}
+
+.logo_container {
+	@apply flex;
+}
+
+.logo_wrapp {
+	@apply z-[5] w-[88px];
+}
+
+.logo_img {
+	@apply h-[75px] flex self-center;
+}
+
+.menu_nav_container {
+	@apply ml-[20px] w-full pt-[10px] flex flex-col h-full items-start justify-end;
+}
+
+.header_nav_container {
+	@apply flex items-center justify-between my-0 mx-[15px] max-w-[1062px];
+}
+
+.header_nav_container_category {
+	@apply overflow-hidden;
+}
+
+.header_nav_container_fullW {
+	@apply w-full;
+}
+
+.header_nav_up_top_link {
+	@apply mr-[50px] z-[3] h-[25px] mb-[7px];
+}
+
+.header_nav_up_top_link span {
+	@apply text-white cursor-pointer uppercase font-medium font-sans text-[12px] tracking-[1.2px];
+}
+
+.active {
+	@apply border-b-[3px];
+}
+
+.icon_button_container {
+	@apply flex items-center justify-between flex-row mb-[2px] ml-auto  mr-[20px];
+}
+
+.icon_button {
+	@apply relative mr-[25px];
+}
+
+.nav_link {
+	@apply z-[3] h-[46px] flex justify-center items-center py-0 px-[17px];
+}
+
+.nav_link:first-child {
+	@apply pl-0;
+}
+
+.nav_link_span {
+	@apply text-[13px] tracking-[1.1px] font-normal whitespace-nowrap cursor-pointer pb-[5px] text-white hover:border-b-2;
+}
+
+.nav_link_discount {
+	@apply font-medium text-red-600;
+}
+
+.nav_link_news {
+	@apply font-medium text-lime-500;
+}

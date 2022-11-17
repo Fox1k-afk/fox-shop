@@ -4,10 +4,10 @@ import ShopInfo from './ShopInfo';
 
 const Header = () => {
 	return (
-		<div className=''>
+		<header>
 			<ShopInfo />
 			<Navigation />
-		</div>
+		</header>
 	);
 };
 
