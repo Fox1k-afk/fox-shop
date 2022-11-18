@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import phoneSvg from '../../svg/phone-call-svgrepo-com.svg';
+import phoneSvg from '../../../svg/phone-call-svgrepo-com.svg';
 import styles from './ShopInfo.module.css';
 
 const ShopInfo = () => {

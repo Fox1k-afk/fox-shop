@@ -62,6 +62,10 @@
 	@apply z-[3] h-[46px] flex justify-center items-center py-0 px-[17px];
 }
 
+.nav_link_dropdown {
+	@apply bg-white hover:z-[4];
+}
+
 .nav_link:first-child {
 	@apply pl-0;
 }
@@ -70,10 +74,50 @@
 	@apply text-[13px] tracking-[1.1px] font-normal whitespace-nowrap cursor-pointer pb-[5px] text-white hover:border-b-2;
 }
 
+.nav_link_span_dropdowns_hover {
+	@apply border-b-black text-black;
+}
+
 .nav_link_discount {
 	@apply font-medium text-red-600;
 }
 
 .nav_link_news {
 	@apply font-medium text-lime-500;
+}
+
+.drop_wrapper {
+	@apply z-[2] w-full top-0 left-0 absolute;
+}
+
+.drop_container {
+	@apply absolute top-[120px] left-0 w-full bg-white z-[2] min-h-[300px];
+}
+
+.drop_off_trigger {
+	@apply absolute top-[300px] left-0 w-full min-h-[350px];
+}
+
+.drop_categories {
+	@apply pt-[60px] pb-[35px] w-[810px] m-auto columns-3;
+}
+
+.drop_category {
+	@apply w-[190px] pb-[35px] mr-auto inline-block;
+}
+
+.drop_title {
+	@apply font-bold uppercase block tracking-[1px] w-fit hover:border-b-[2px] border-black hover:-mb-[2px] text-[14px];
+}
+
+.drop_subCategorys {
+	@apply mt-[20px];
+}
+
+.drop_subtitles_container {
+	@apply mb-[20px] w-fit;
+}
+
+.drop_link_subtitle {
+	@apply text-[11px] uppercase block tracking-[1px] text-stone-600 pb-[1px] hover:border-b-[1px] border-black hover:-mb-[1px];
 }

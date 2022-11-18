@@ -1,6 +1,6 @@
 import React from 'react';
-import Navigation from './Navigation';
-import ShopInfo from './ShopInfo';
+import Navigation from './navigation/Navigation';
+import ShopInfo from './shopInfo/ShopInfo';
 
 const Header = () => {
 	return (
