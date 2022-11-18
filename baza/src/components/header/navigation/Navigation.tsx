@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logo from '../../../svg/fox.svg';
+import logo from '../../../assets/svg/fox.svg';
 import styles from '../Navigation.module.css';
 import DropdownNav from './LowerNav';
 import IconsNav from './UpperNav';

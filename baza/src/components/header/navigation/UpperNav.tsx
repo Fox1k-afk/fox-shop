@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-import person from '../../..//svg/icons8-user-25.png';
-import logoUA from '../../../svg/I_stand_with_Ukraine_banner.svg';
-import favorite from '../../../svg/icons8-box.svg';
-import loup from '../../../svg/icons8-search.svg';
-import cart from '../../../svg/icons8-shopping-cart-25.png';
+import person from '../../..//assets/images/icons8-user-25.png';
+import logoUA from '../../../assets/svg/I_stand_with_Ukraine_banner.svg';
+import favorite from '../../../assets/svg/icons8-box.svg';
+import loup from '../../../assets/svg/icons8-search.svg';
+import cart from '../../../assets/images/icons8-shopping-cart-25.png';
 import styles from '../Navigation.module.css';
 
 const IconsNav = () => {

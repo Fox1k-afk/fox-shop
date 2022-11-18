@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Accessories from '../dropdownLlist/Accessories';
-import Bags from '../dropdownLlist/Bags';
-import Clothes from '../dropdownLlist/Clothes';
-import Shoes from '../dropdownLlist/Shoes';
+import Accessories from './dropdownLlist/Accessories';
+import Bags from './dropdownLlist/Bags';
+import Clothes from './dropdownLlist/Clothes';
+import Shoes from './dropdownLlist/Shoes';
 import styles from '../Navigation.module.css';
 
 const DropdownNav = () => {

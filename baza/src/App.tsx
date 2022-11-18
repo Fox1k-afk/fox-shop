@@ -4,8 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import Navigation from './components/header/navigation/Navigation';
 import About from './pages/About';
 import Products from './pages/Products';
-import Footer from './components/Footer';
 import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 
 const App = () => {
 	return (

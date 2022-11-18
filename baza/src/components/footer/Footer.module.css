@@ -1,0 +1,90 @@
+.footer_wrapper {
+	@apply bg-[#f0f3f2] py-[50px] px-0;
+}
+
+.footer__container {
+	@apply w-full m-auto py-0 px-[20px] max-w-[1210px] flex justify-between;
+}
+
+.footer__catalog {
+	@apply w-1/4 flex flex-wrap flex-col;
+}
+
+.footer__link_container {
+	@apply w-[300px];
+}
+
+.footer__title {
+	@apply font-bold uppercase tracking-[1px] mb-[50px] text-[14px];
+}
+
+.footer__link {
+	@apply mb-[30px] block;
+}
+
+.footer__link span {
+	@apply text-[13px] uppercase tracking-[1px] hover:opacity-60;
+}
+
+.footer__link:last-child {
+	@apply mb-0;
+}
+
+.footer__info {
+	@apply w-1/2;
+}
+
+.footer__info_links {
+	@apply flex justify-between;
+}
+
+.footer__socials {
+	@apply w-1/4 flex flex-wrap flex-col;
+}
+
+.footer__social_links {
+	@apply flex justify-around;
+}
+
+.footer__social_links img {
+	@apply h-[38px] hover:opacity-60;
+}
+
+.footer__social_links a {
+	@apply mr-[10px];
+}
+
+.footer__social_links a:last-child {
+	@apply mr-0;
+}
+
+.footer__marketplaces {
+	@apply flex justify-around mt-[40px] mb-[15px];
+}
+
+.footer__marketplaces a:first-child {
+	@apply mr-[4%];
+}
+.footer__marketplaces a {
+	@apply w-[48%] max-w-[170px];
+}
+
+.footer__marketplaces img {
+	@apply w-full inline-block hover:opacity-60;
+}
+
+.footer__subscribe {
+	@apply flex justify-start items-center mt-[20px] hover:opacity-60;
+}
+
+.footer__subscribe span {
+	@apply ml-[14px] text-sm tracking-[0.75px];
+}
+
+.footer__divider {
+	@apply w-[66px] h-[3px] bg-black mt-[63px] mb-0 mx-auto;
+}
+
+.footer__copyright {
+	@apply font-light text-[12px] text-[#b3b3b3] mt-[27px] text-center leading-tight;
+}
