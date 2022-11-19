@@ -1,5 +1,5 @@
 .main_container_top {
-	@apply max-w-[1210px] w-full mx-auto flex justify-center py-[3px] px-[20px];
+	@apply max-w-[1210px] w-full mx-auto flex justify-center py-[5px] px-[20px];
 }
 
 .nav_container_top {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import letter from '../../../assets/images/icons8-новый-пост-40.png';
-import payMethod from '../../../assets/images/visa-and-mastercard-logos-logo-visa-png-logo-visa-mastercard-png-visa-logo-white-png-awesome-logos-1.png';
+import payMethod from '../../../assets/images/visa-and-mastercard.png';
 import appleStore from '../../../assets/svg/app-store.svg';
 import googleStore from '../../../assets/svg/google-play.svg';
 import facebook from '../../../assets/svg/icons8-facebook.svg';

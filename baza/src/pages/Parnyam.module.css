@@ -1,0 +1,15 @@
+.main__wrapper {
+	@apply relative;
+}
+
+.main__banner_container {
+	@apply mb-[30px];
+}
+
+/* .banner_carousel__wrapper {
+	@apply flex justify-center w-full relative;
+}
+
+.banner_carousel__container {
+	@apply w-full;
+} */

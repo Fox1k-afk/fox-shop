@@ -177,6 +177,15 @@ const DropdownNav = () => {
 					setShowAccesories(false),
 				]}
 			></div>
+			<div
+				className={styles.drop_off_trigger_upper}
+				onMouseEnter={() => [
+					setShowClothes(false),
+					setShowShoes(false),
+					setShowBags(false),
+					setShowAccesories(false),
+				]}
+			></div>
 		</>
 	);
 };

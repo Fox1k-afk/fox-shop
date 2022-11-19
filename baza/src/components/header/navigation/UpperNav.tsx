@@ -15,7 +15,7 @@ const IconsNav = () => {
 		>
 			<div className={styles.header_nav_up_top_link}>
 				<NavLink
-					to={'/'}
+					to={'/parnyam'}
 					className={({ isActive }) => (isActive ? styles.active : undefined)}
 				>
 					<span>For Boys</span>
@@ -24,7 +24,7 @@ const IconsNav = () => {
 
 			<div className={styles.header_nav_up_top_link}>
 				<NavLink
-					to={'/about'}
+					to={'/devushkam'}
 					className={({ isActive }) => (isActive ? styles.active : undefined)}
 				>
 					<span>For Girls</span>

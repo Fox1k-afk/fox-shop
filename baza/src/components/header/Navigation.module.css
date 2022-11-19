@@ -51,7 +51,7 @@
 }
 
 .icon_button_container {
-	@apply flex items-center justify-between flex-row mb-[2px] ml-auto  mr-[20px];
+	@apply flex items-center justify-between flex-row mb-[2px] ml-auto  mr-[20px] z-[3];
 }
 
 .icon_button {
@@ -91,11 +91,15 @@
 }
 
 .drop_container {
-	@apply absolute top-[120px] left-0 w-full bg-white z-[2] min-h-[300px];
+	@apply absolute top-[90px] left-0 w-full bg-white z-[2] min-h-[300px];
 }
 
 .drop_off_trigger {
-	@apply absolute top-[300px] left-0 w-full min-h-[350px];
+	@apply absolute top-[400px] left-0 w-full min-h-[50px] z-[5];
+}
+
+.drop_off_trigger_upper {
+	@apply absolute top-[0px] left-0 w-full min-h-[50px] z-[0];
 }
 
 .drop_categories {
