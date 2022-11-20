@@ -9,6 +9,8 @@ import s from './Parnyam.module.css';
 // import { ModalContext } from '../context/ModalContext';
 // import { shopAPI } from '../services/ShopService';
 import ParnyamSlider from '../components/slider/boysSlider/ParnyamSlider';
+import SmallBanners from '../components/main/SmallBanners';
+import Lookoftheday from '../components/slider/boysSlider/Lookoftheday';
 
 // const Parnyam = () => {
 // 	const {
@@ -45,10 +47,20 @@ const Parnyam = () => {
 	return (
 		<div>
 			<div className={s.main__wrapper}>
-				<div className={s.main__banner_container}>
-					<div className={s.banner_carousel__wrapper}>
-						<div className={s.banner_carousel__container}>
-							<ParnyamSlider />
+				<ParnyamSlider />
+
+				<div className={s.main__content_container}>
+					<SmallBanners />
+					<div className={s.main__content_item}>
+						<div className={s.main__title_container}>
+							<div className={s.underlined_title__container}>
+								<span>Pidbirka obraziv</span>
+							</div>
+						</div>
+						<div className={s.main__products_container_fashion}>
+							<div className={s.scrollable_products__container}>
+								<Lookoftheday />
+							</div>
 						</div>
 					</div>
 				</div>
