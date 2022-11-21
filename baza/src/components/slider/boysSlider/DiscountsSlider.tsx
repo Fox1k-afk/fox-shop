@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import s from './DiscountsSlider.module.css';
+import s from '../../main/Parnyam.module.css';
 import emptyhHeart from '../../../assets/svg/emptyheart.svg';
 import fulHeart from '../../../assets/svg/fullheart.svg';
 

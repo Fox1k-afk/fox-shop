@@ -12,6 +12,10 @@ import ParnyamSlider from '../components/slider/boysSlider/ParnyamSlider';
 import SmallBanners from '../components/main/SmallBanners';
 import PodborObrazov from '../components/main/PodborObrazov';
 import DiscountsBlock from '../components/main/DiscountsBlock';
+import NewClothesBlock from '../components/main/NewClothesBlock';
+import Loader from '../components/Loader';
+import upArrow from '../assets/svg/up-arrow.svg';
+import ScrollButton from '../components/main/ScrollButton';
 
 // const Parnyam = () => {
 // 	const {
@@ -55,7 +59,11 @@ const Parnyam = () => {
 					<div>
 						<PodborObrazov />
 						<DiscountsBlock />
+						<NewClothesBlock />
 					</div>
+				</div>
+				<div>
+					<ScrollButton />
 				</div>
 			</div>
 		</div>
