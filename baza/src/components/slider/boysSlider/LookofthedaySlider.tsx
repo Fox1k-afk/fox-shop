@@ -70,18 +70,15 @@ function SamplePrevArrow(props: any) {
 	);
 }
 
-const Lookoftheday = () => {
+const LookofthedaySlider = () => {
 	const settings = {
-		infinite: true,
 		slidesToShow: 3,
-		slidesToScroll: 1,
-		speed: 1000,
+		slidesToScroll: 3,
+		speed: 500,
 		slidesPerRow: 1,
 		nextArrow: <SampleNextArrow />,
 		prevArrow: <SamplePrevArrow />,
 		swipeToSlide: false,
-		autoplay: true,
-		autoplaySpeed: 4000,
 		cssEase: 'linear',
 	};
 	return (
@@ -191,4 +188,4 @@ const Lookoftheday = () => {
 	);
 };
 
-export default Lookoftheday;
+export default LookofthedaySlider;

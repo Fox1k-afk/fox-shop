@@ -65,3 +65,7 @@
 .scrollable_products__container {
 	@apply w-full relative max-h-[inherit];
 }
+
+.main__products_container {
+	@apply flex flex-wrap justify-start h-full;
+}

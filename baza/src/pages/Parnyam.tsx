@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import s from './Parnyam.module.css';
+import s from '../components/main/Parnyam.module.css';
 
 // import CreateProduct from '../components/CreateProduct';
 // import ErrorMessage from '../components/ErrorMessage';
@@ -10,7 +10,8 @@ import s from './Parnyam.module.css';
 // import { shopAPI } from '../services/ShopService';
 import ParnyamSlider from '../components/slider/boysSlider/ParnyamSlider';
 import SmallBanners from '../components/main/SmallBanners';
-import Lookoftheday from '../components/slider/boysSlider/Lookoftheday';
+import PodborObrazov from '../components/main/PodborObrazov';
+import DiscountsBlock from '../components/main/DiscountsBlock';
 
 // const Parnyam = () => {
 // 	const {
@@ -51,17 +52,9 @@ const Parnyam = () => {
 
 				<div className={s.main__content_container}>
 					<SmallBanners />
-					<div className={s.main__content_item}>
-						<div className={s.main__title_container}>
-							<div className={s.underlined_title__container}>
-								<span>Pidbirka obraziv</span>
-							</div>
-						</div>
-						<div className={s.main__products_container_fashion}>
-							<div className={s.scrollable_products__container}>
-								<Lookoftheday />
-							</div>
-						</div>
+					<div>
+						<PodborObrazov />
+						<DiscountsBlock />
 					</div>
 				</div>
 			</div>

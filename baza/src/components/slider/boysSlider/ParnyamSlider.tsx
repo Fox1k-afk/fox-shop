@@ -5,7 +5,7 @@ import slide from '../../../assets/images/parnyamMain/42d486c092fb4fa9aaa1b6697c
 import slide2 from '../../../assets/images/parnyamMain/61c8caa3d6044fb2b1ebac8e0d95333a.jpeg';
 import nextArrow from '../../../assets/images/nextArrow.png';
 import prevArrow from '../../../assets/images/prevArrow.png';
-import s from '../../../pages/Parnyam.module.css';
+import s from '../../main/Parnyam.module.css';
 
 function SampleNextArrow(props: any) {
 	const { className, style, onClick } = props;

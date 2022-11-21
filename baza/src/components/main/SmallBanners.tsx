@@ -5,7 +5,7 @@ import banner1 from '../../assets/images/main_1.jpeg';
 import banner2 from '../../assets/images/main_2.jpeg';
 import banner3 from '../../assets/images/main_3.jpeg';
 import banner4 from '../../assets/images/main_4.jpeg';
-import s from '../../pages/Parnyam.module.css';
+import s from './Parnyam.module.css';
 
 const SmallBanners = () => {
 	return (
