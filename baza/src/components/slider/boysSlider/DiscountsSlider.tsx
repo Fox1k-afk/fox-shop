@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import s from '../../main/Parnyam.module.css';
+
 import emptyhHeart from '../../../assets/svg/emptyheart.svg';
 import fulHeart from '../../../assets/svg/fullheart.svg';
-
 import { shopAPI } from '../../../services/ShopService';
+import Loader from '../../Loader';
+import s from '../../main/Parnyam.module.css';
 
 function SampleNextArrow(props: any) {
 	const { className, style, onClick } = props;
@@ -64,7 +64,7 @@ function SamplePrevArrow(props: any) {
 }
 
 const DiscountsSlider = () => {
-	const { data: products } = shopAPI.useFetchAllProductsQuery(30);
+	const { data: products, isLoading } = shopAPI.useFetchAllProductsQuery(30);
 	const [like, setLike] = useState(false);
 
 	const settings = {
@@ -79,6 +79,7 @@ const DiscountsSlider = () => {
 
 	return (
 		<Slider {...settings}>
+			{isLoading && <Loader />}
 			{products?.map((product) => (
 				<div className={s.main__product_card} key={product.id}>
 					<div className={s.product_card__container}>

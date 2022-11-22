@@ -7,7 +7,7 @@ import Clothes from './dropdownLlist/Clothes';
 import Shoes from './dropdownLlist/Shoes';
 import styles from '../Navigation.module.css';
 
-const DropdownNav = () => {
+const LowerNav = () => {
 	const [showClothes, setShowClothes] = useState(false);
 	const [showShoes, setShowShoes] = useState(false);
 	const [showBags, setShowBags] = useState(false);
@@ -190,4 +190,4 @@ const DropdownNav = () => {
 	);
 };
 
-export default DropdownNav;
+export default LowerNav;

@@ -91,7 +91,13 @@
 }
 
 .product_card__main_image {
-	@apply relative w-full overflow-hidden h-full transition-all flex;
+	@apply relative w-full overflow-hidden h-full transition-all flex cursor-pointer;
+}
+.product_card__main_image img {
+	@apply transition-all duration-500;
+}
+.product_card__main_image:hover img {
+	@apply scale-110;
 }
 
 .product_card__like {

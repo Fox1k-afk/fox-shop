@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { shopAPI } from '../../services/ShopService';
-import s from './Parnyam.module.css';
+
 import emptyhHeart from '../../assets/svg/emptyheart.svg';
 import fulHeart from '../../assets/svg/fullheart.svg';
-import loader from '../../assets/svg/reload.svg';
+import { shopAPI } from '../../services/ShopService';
 import Loader from '../Loader';
+import s from './Parnyam.module.css';
 
 const NewClothesBlock = () => {
 	const { data: products, isLoading } = shopAPI.useFetchAllProductsQuery(30);

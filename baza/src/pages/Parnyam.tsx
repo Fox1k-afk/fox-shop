@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import s from '../components/main/Parnyam.module.css';
 
 // import CreateProduct from '../components/CreateProduct';
 // import ErrorMessage from '../components/ErrorMessage';
 // import Loader from '../components/Loader';
-// import Modal from '../components/Modal';
 // import Product from '../components/Product';
-// import { ModalContext } from '../context/ModalContext';
 // import { shopAPI } from '../services/ShopService';
+// import { ModalContext } from '../context/ModalContext';
+// import Modal from '../components/Modal';
 import ParnyamSlider from '../components/slider/boysSlider/ParnyamSlider';
 import SmallBanners from '../components/main/SmallBanners';
 import PodborObrazov from '../components/main/PodborObrazov';
@@ -23,7 +23,7 @@ import ScrollButton from '../components/main/ScrollButton';
 // 		error,
 // 		isLoading: loading,
 // 	} = shopAPI.useFetchAllProductsQuery(10);
-// 	const { modal, open, close } = useContext(ModalContext);
+// const { modal, openModal, closeModal } = useContext(ModalContext);
 
 // 	return (
 // 		<div className='container mx-auto max-w-[1170px] pt-5'>

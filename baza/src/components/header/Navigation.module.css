@@ -31,7 +31,7 @@
 }
 
 .header_nav_container_category {
-	@apply overflow-hidden;
+	@apply overflow-hidden pt-[10px];
 }
 
 .header_nav_container_fullW {
@@ -39,7 +39,7 @@
 }
 
 .header_nav_up_top_link {
-	@apply mr-[50px] z-[3] h-[25px] mb-[7px];
+	@apply mr-[50px] z-[3] h-[25px] mb-[7px] pt-[4px];
 }
 
 .header_nav_up_top_link span {

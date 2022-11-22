@@ -7,7 +7,14 @@
 }
 
 .fashion_card__main_image {
-	@apply w-full overflow-hidden h-full relative transition-all;
+	@apply w-full overflow-hidden h-full relative;
+}
+
+.fashion_card__main_image img {
+	@apply transition-all duration-700;
+}
+.fashion_card__main_image:hover img {
+	@apply scale-110;
 }
 
 .complete_look {

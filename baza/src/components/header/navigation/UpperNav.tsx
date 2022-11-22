@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import person from '../../..//assets/images/icons8-user-25.png';
@@ -7,12 +7,23 @@ import favorite from '../../../assets/svg/icons8-box.svg';
 import loup from '../../../assets/svg/icons8-search.svg';
 import cart from '../../../assets/images/icons8-shopping-cart-25.png';
 import styles from '../Navigation.module.css';
+import { ModalContext } from '../../../context/ModalContext';
+import Modal from '../../modals/Modal';
+import SearchProduct from '../../modals/SearchProduct';
 
-const IconsNav = () => {
+const UpperNav = () => {
+	const { modal, openModal, closeModal } = useContext(ModalContext);
+
 	return (
 		<div
 			className={`${styles.header_nav_container} ${styles.header_nav_container_fullW}`}
 		>
+			{modal && (
+				<Modal title='Create new product' onClose={closeModal}>
+					<SearchProduct onClose={closeModal} />
+				</Modal>
+			)}
+
 			<div className={styles.header_nav_up_top_link}>
 				<NavLink
 					to={'/parnyam'}
@@ -42,7 +53,7 @@ const IconsNav = () => {
 				</a>
 
 				<div className={styles.icon_button}>
-					<button>
+					<button onClick={openModal}>
 						<img src={loup} alt='loup' className=' flex items-center w-[25px] ' />
 					</button>
 				</div>
@@ -69,4 +80,4 @@ const IconsNav = () => {
 	);
 };
 
-export default IconsNav;
+export default UpperNav;
