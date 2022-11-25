@@ -2,25 +2,43 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import person from '../../..//assets/images/icons8-user-25.png';
+import cart from '../../../assets/images/icons8-shopping-cart-25.png';
 import logoUA from '../../../assets/svg/I_stand_with_Ukraine_banner.svg';
 import favorite from '../../../assets/svg/icons8-box.svg';
 import loup from '../../../assets/svg/icons8-search.svg';
-import cart from '../../../assets/images/icons8-shopping-cart-25.png';
-import styles from '../Navigation.module.css';
-import { ModalContext } from '../../../context/ModalContext';
-import Modal from '../../modals/Modal';
+import { LoginContext } from '../../../context/ProfileContext';
+import { SearchContext } from '../../../context/SearchContext';
+import Modal from '../../modals/_Modal';
+import LoginRegist from '../../modals/LoginRegist';
 import SearchProduct from '../../modals/SearchProduct';
+import styles from '../Navigation.module.css';
 
 const UpperNav = () => {
-	const { modal, openModal, closeModal } = useContext(ModalContext);
+	const {
+		modal: search,
+		open: searchOpen,
+		close: searchClose,
+	} = useContext(SearchContext);
+
+	const {
+		modal: login,
+		open: loginOpen,
+		close: loginClose,
+	} = useContext(LoginContext);
 
 	return (
 		<div
 			className={`${styles.header_nav_container} ${styles.header_nav_container_fullW}`}
 		>
-			{modal && (
-				<Modal title='Create new product' onClose={closeModal}>
-					<SearchProduct onClose={closeModal} />
+			{search && (
+				<Modal onClose={searchClose}>
+					<SearchProduct onClose={searchClose} />
+				</Modal>
+			)}
+
+			{login && (
+				<Modal onClose={loginClose}>
+					<LoginRegist onClose={loginClose} />
 				</Modal>
 			)}
 
@@ -53,13 +71,13 @@ const UpperNav = () => {
 				</a>
 
 				<div className={styles.icon_button}>
-					<button onClick={openModal}>
+					<button onClick={searchOpen}>
 						<img src={loup} alt='loup' className=' flex items-center w-[25px] ' />
 					</button>
 				</div>
 
 				<div className={styles.icon_button}>
-					<button>
+					<button onClick={loginOpen}>
 						<img src={person} alt='person' />
 					</button>
 				</div>

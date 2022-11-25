@@ -1,6 +1,6 @@
 import './index.css';
-import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -8,7 +8,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
-import { ModalState } from './context/ModalContext';
+import { LogInState } from './context/ProfileContext';
+import { SearchState } from './context/SearchContext';
 import { store } from './store';
 
 const root = ReactDOM.createRoot(
@@ -17,9 +18,11 @@ const root = ReactDOM.createRoot(
 root.render(
 	<Provider store={store}>
 		<BrowserRouter>
-			<ModalState>
-				<App />
-			</ModalState>
+			<SearchState>
+				<LogInState>
+					<App />
+				</LogInState>
+			</SearchState>
 		</BrowserRouter>
 	</Provider>
 );

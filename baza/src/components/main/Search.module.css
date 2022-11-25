@@ -1,0 +1,55 @@
+.searchpage__wrapper {
+	@apply relative;
+}
+
+.searchpage__content_container {
+	@apply w-full pt-[80px] px-[20px] pb-0 max-w-[1210px] mt-0 mx-auto mb-[75px];
+}
+
+.searchpage__page_header {
+	@apply mb-[80px];
+}
+
+.page_title {
+	@apply flex justify-center;
+}
+.page_title h1 {
+	@apply text-[34px] font-light uppercase tracking-[6px] m-0 p-0 text-center;
+}
+
+.searchpage__products_count {
+	@apply flex justify-center mt-[25px] text-[#999] text-[12px];
+}
+
+.searchpage__products_count span {
+	@apply text-black;
+}
+
+.searchpage__search {
+	@apply mb-[30px];
+}
+
+.search__form {
+	@apply flex w-full;
+}
+
+.search__select {
+	@apply w-[175px] min-w-[175px] border-r divide-solid border-r-[#b3b3b3] cursor-pointer relative flex items-center py-[25px] px-[20px];
+}
+
+.search__selected {
+	@apply bg-transparent uppercase text-[13px] select-none font-bold tracking-[1.2px]
+	after:absolute after:top-[30px] after:mt-auto after:mr-[20px] after:mb-auto after:ml-0 after:right-0 after:w-0 after:h-0 after:border-[5px] after:border-solid after:border-transparent after:border-t-black;
+}
+
+.search__input {
+	@apply relative w-full;
+}
+
+.search__input input {
+	@apply w-full border-none py-[25px] pr-[50px] pl-[30px] text-[16px] tracking-[2px] outline-none;
+}
+
+.searcpage__products_container {
+	@apply flex flex-wrap justify-start;
+}

@@ -14,5 +14,10 @@ export const shopAPI = createApi({
 				},
 			}),
 		}),
+		sortProducts: build.query<IProduct[], any>({
+			query: () => ({
+				url: '/products?sort=desc',
+			}),
+		}),
 	}),
 });

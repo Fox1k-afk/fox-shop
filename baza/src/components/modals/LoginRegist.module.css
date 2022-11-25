@@ -1,0 +1,95 @@
+.modal__main_container {
+	@apply flex justify-center items-center py-0 px-[20px];
+}
+
+.modal__movable {
+	@apply absolute bg-white w-[470px] my-0 mx-auto transition-all left-[470px] opacity-0;
+}
+
+.modal__movable_active {
+	@apply left-0 right-0 opacity-100;
+}
+
+.modal__container {
+	@apply p-[50px];
+}
+
+.modal__title_container {
+	@apply flex justify-between;
+}
+
+.underlined_title__container {
+	@apply inline-block;
+}
+
+.underlined_title__container span {
+	@apply font-medium text-[20px] uppercase tracking-[1.5px] pt-0 pr-[25px] pb-[15px] pl-0 block border-black border-b-[3px];
+}
+
+.modal__content {
+	@apply mt-[40px];
+}
+
+.modal__form_container {
+	@apply flex;
+}
+
+.modal__form {
+	@apply w-full;
+}
+
+.modal__form_sign_in {
+	@apply w-[220px] mt-0 mr-[50px] mb-[50px] ml-0;
+}
+
+.modal__form_title {
+	@apply text-[11px] font-bold uppercase mb-[30px] tracking-[1.2px];
+}
+
+.modal__form_input {
+	@apply mb-[30px];
+}
+
+.custom_input {
+	@apply w-full text-[#b3b3b3];
+}
+
+.custom_input input {
+	@apply border-b-[1px] border-b-[#b3b3b3] text-[16px] outline-none text-black;
+}
+
+.modal__socials {
+	@apply flex flex-wrap;
+}
+
+.modal__social {
+	@apply w-1/2 mb-[30px];
+}
+
+.modal__reset {
+	@apply flex items-center justify-center;
+}
+
+.modal__reset button {
+	@apply text-[11px] uppercase tracking-[1px];
+}
+
+.modal__buttons {
+	@apply flex;
+}
+
+.modal__button {
+	@apply w-1/2 h-[56px] flex justify-center items-center flex-wrap uppercase tracking-[1.5px] font-medium py-0 px-[15px];
+}
+
+.modal__button_gray {
+	@apply bg-[#eee] text-black;
+}
+
+.modal__button_black {
+	@apply bg-black text-white;
+}
+
+.modal__button_arrow {
+	@apply mr-[25px];
+}

@@ -5,6 +5,7 @@ import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import About from './pages/About';
 import Parnyam from './pages/Parnyam';
+import Search from './pages/Search';
 
 const App = () => {
 	return (
@@ -13,6 +14,7 @@ const App = () => {
 			<Routes>
 				<Route path='/parnyam' element={<Parnyam />} />
 				<Route path='/about' element={<About />} />
+				<Route path='/search' element={<Search />}></Route>
 			</Routes>
 			<Footer />
 		</>

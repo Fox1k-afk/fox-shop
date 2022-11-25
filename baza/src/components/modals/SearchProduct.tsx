@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import loupe from '../../assets/svg/loupe-black.svg';
 
 interface SearchProductProps {
@@ -7,12 +8,13 @@ interface SearchProductProps {
 
 const SearchProduct = ({ onClose }: SearchProductProps) => {
 	const [value, setValue] = useState('');
+	const navigate = useNavigate();
 
 	const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setValue(e.target.value);
 	};
 	return (
-		<>
+		<div className=' max-w-[770px] w-[770px] mb-[250px] '>
 			<div className=' flex justify-between items-center mb-[25px]'>
 				<div className='text-white uppercase tracking-[1.5px] text-[20px]  ml-[20px]'>
 					poshuk
@@ -39,19 +41,20 @@ const SearchProduct = ({ onClose }: SearchProductProps) => {
 						onChange={changeHandler}
 						type='text'
 						className=' bg-white w-full border-none py-[25px] pr-[50px] pl-[30px] text-[16px] tracking-[2px] outline-none'
-						placeholder='Enter text for find'
+						placeholder='Doesn"t work ;('
 					/>
-					{/* <div className=' absolute w-[calc(100%-57px)] z-100'>
-						autocomplete here
-					</div> */}
-					<button className=' absolute top-0 right-0 bottom-0 p-[12px] my-auto mx-0'>
+
+					<button
+						onClick={() => [navigate('/search'), onClose()]}
+						className=' absolute top-0 right-0 bottom-0 p-[12px] my-auto mx-0'
+					>
 						<div>
 							<img src={loupe} alt='loupe' />
 						</div>
 					</button>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
