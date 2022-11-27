@@ -1,52 +1,15 @@
 import React from 'react';
-import s from '../components/main/Parnyam.module.css';
 
-// import CreateProduct from '../components/CreateProduct';
-// import ErrorMessage from '../components/ErrorMessage';
-// import Loader from '../components/Loader';
-// import Product from '../components/Product';
-// import { shopAPI } from '../services/ShopService';
-// import { ModalContext } from '../context/ModalContext';
-// import Modal from '../components/Modal';
-import ParnyamSlider from '../components/slider/boysSlider/ParnyamSlider';
-import SmallBanners from '../components/main/SmallBanners';
-import PodborObrazov from '../components/main/PodborObrazov';
 import DiscountsBlock from '../components/main/DiscountsBlock';
 import NewClothesBlock from '../components/main/NewClothesBlock';
-import Loader from '../components/Loader';
-import upArrow from '../assets/svg/up-arrow.svg';
-import ScrollButton from '../components/main/ScrollButton';
+import s from '../components/main/Parnyam.module.css';
+import PodborObrazov from '../components/main/PodborObrazov';
+import ScrollButton from '../components/ScrollButton';
+import SmallBanners from '../components/main/SmallBanners';
+import ParnyamSlider from '../components/slider/boysSlider/ParnyamSlider';
 
-// const Parnyam = () => {
-// 	const {
-// 		data: products,
-// 		error,
-// 		isLoading: loading,
-// 	} = shopAPI.useFetchAllProductsQuery(10);
-// const { modal, openModal, closeModal } = useContext(ModalContext);
-
-// 	return (
-// 		<div className='container mx-auto max-w-[1170px] pt-5'>
-// 			{loading && <Loader />}
-// 			{error && <ErrorMessage errMsg='Loading products error' />}
-// 			{products?.map((product) => (
-// 				<Product product={product} key={product.id} />
-// 			))}
-
-// 			{modal && (
-// 				<Modal title='Create new product' onClose={close}>
-// 					<CreateProduct />
-// 				</Modal>
-// 			)}
-// 			<button
-// 				className='fixed bottom-5 right-5 rounded-full bg-red-700 text-white text-2xl px-4 py-2'
-// 				onClick={open}
-// 			>
-// 				ModalOpen
-// 			</button>
-// 		</div>
-// 	);
-// };
+// import Loader from '../components/Loader';
+// import upArrow from '../assets/svg/up-arrow.svg';
 
 const Parnyam = () => {
 	return (

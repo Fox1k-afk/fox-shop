@@ -9,7 +9,7 @@ const Logo = () => {
 			{/* <button className={styles.hamburger_slider}></button>    hamb for mobiles */}
 			<div className={styles.logo_wrapp}>
 				<div>
-					<a href='/'>
+					<a href='/parnyam'>
 						<div>
 							<img src={logo} alt='logo' className={styles.logo_img} />
 						</div>

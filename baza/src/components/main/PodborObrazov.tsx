@@ -10,6 +10,7 @@ const PodborObrazov = () => {
 					<span>Pidbirka obraziv</span>
 				</div>
 			</div>
+
 			<div className={s.main__products_container_fashion}>
 				<div className={s.scrollable_products__container}>
 					<Lookoftheday />

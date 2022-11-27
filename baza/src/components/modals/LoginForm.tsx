@@ -1,20 +1,23 @@
-import { getIn, ErrorMessage, Formik, Field, Form } from 'formik';
-import React, { useState } from 'react';
-import EnterButton from './EnterButton';
+import { ErrorMessage, Field, Form, Formik, getIn } from 'formik';
+import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
+
+import { LoginContext } from '../../context/ProfileContext';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { loginUser } from '../../store/slices/ActionCreators';
+import LoginButton from './LoginButton';
 import s from './LoginRegist.module.css';
 
 const INITIAL_INPUT_VALUE = {
-	phone: '+380',
-	password: '',
+	username: 'mor_2314',
+	password: '83r5^_',
 };
 
-const phoneRegExp = /(?=.*\+[0-9]{3}\s?[0-9]{2}\s?[0-9]{3}\s?[0-9]{4}$)/;
-
 const FORM_VALIDATION_SCHEMA = {
-	phone: Yup.string()
-		.required('Phone num required')
-		.matches(phoneRegExp, 'Enter Ukraine phone number example:+380 99 678 3498'),
+	username: Yup.string()
+		.required('Login required')
+		.min(4, 'should be 4 chars minimun'),
 
 	password: Yup.string()
 		.min(6, 'should be 6 chars minimum.')
@@ -22,12 +25,25 @@ const FORM_VALIDATION_SCHEMA = {
 };
 
 const LoginForm = () => {
+	const { close: loginClose } = useContext(LoginContext);
+	const auth = useAppSelector((state) => state.auth);
 	const [inpVal] = useState(INITIAL_INPUT_VALUE);
+	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
 
-	function PhoneInput({ field, form: { errors } }: any) {
+	console.log(auth);
+
+	useEffect(() => {
+		if (auth.Loggined) {
+			loginClose();
+			navigate('/parnyam');
+		}
+	}, [auth.Loggined, loginClose, navigate]);
+
+	function LoginInput({ field, form: { errors } }: any) {
 		return (
 			<div>
-				<input {...field} type='phone' style={getStyles(errors, field.name)} />
+				<input {...field} type='text' style={getStyles(errors, field.name)} />
 				<ErrorMessage
 					name={field.name}
 					component={'div'}
@@ -58,8 +74,13 @@ const LoginForm = () => {
 		}
 	}
 
-	function onSubmit(values: any) {
+	interface IValues {
+		username: string;
+		password: string;
+	}
+	function onSubmit(values: IValues) {
 		console.log(JSON.stringify(values, null, 2));
+		dispatch(loginUser(values));
 	}
 
 	return (
@@ -71,8 +92,8 @@ const LoginForm = () => {
 			<Form>
 				<div className={s.modal__form_input}>
 					<label className={s.custom_input}>
-						Phone Number
-						<Field name='phone' component={PhoneInput} />
+						Username
+						<Field name='username' component={LoginInput} />
 					</label>
 				</div>
 
@@ -83,7 +104,7 @@ const LoginForm = () => {
 					</label>
 				</div>
 
-				{/* <EnterButton /> */}
+				<LoginButton />
 			</Form>
 		</Formik>
 	);

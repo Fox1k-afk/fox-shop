@@ -11,6 +11,7 @@ const Navigation = () => {
 			<div className={styles.main_container}>
 				<div className={styles.container}>
 					<Logo />
+
 					<div className={styles.menu_nav_container}>
 						{/* <div className={styles.showOnMobile}></div> mobiles */}
 						<UpperNav />

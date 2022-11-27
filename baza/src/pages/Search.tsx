@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import s from '../components/main/Search.module.css';
+
 import loupe from '../assets/svg/loupe-black.svg';
-import { shopAPI } from '../services/ShopService';
 import Product from '../components/main/Product';
+import s from './pagesStyles/Search.module.css';
+import { shopAPI } from '../store/services/ShopService';
 
 const Search = () => {
-	const [value, setValue] = useState('');
 	const { data: allProducts } = shopAPI.useSortProductsQuery('');
-	const test = allProducts;
-	console.log(test);
+	const [value, setValue] = useState('');
 
 	const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setValue(e.target.value);
@@ -28,11 +27,13 @@ const Search = () => {
 							Finded: <span>_amount</span>
 						</div>
 					</div>
+
 					<div className={s.searchpage__search}>
 						<div className={s.search__form}>
 							<div className={`${s.search__select} ${'bg-[#f9f9f9]'}`}>
 								<div className={s.search__selected}>For all</div>
 							</div>
+
 							<div className={s.search__input}>
 								<input
 									value={value}
@@ -50,6 +51,7 @@ const Search = () => {
 							</div>
 						</div>
 					</div>
+
 					<div>
 						<div className={s.searcpage__products_container}>
 							{allProducts?.map((product) => (

@@ -93,6 +93,7 @@ const LookofthedaySlider = () => {
 					</button>
 				</div>
 			</div>
+
 			<div className={s.fashion_card__container}>
 				<div className={s.fashion_card__image_container}>
 					<button className={s.fashion_card__main_image}>
@@ -103,6 +104,7 @@ const LookofthedaySlider = () => {
 					</button>
 				</div>
 			</div>
+
 			<div className={s.fashion_card__container}>
 				<div className={s.fashion_card__image_container}>
 					<button className={s.fashion_card__main_image}>
@@ -113,6 +115,7 @@ const LookofthedaySlider = () => {
 					</button>
 				</div>
 			</div>
+
 			<div className={s.fashion_card__container}>
 				<div className={s.fashion_card__image_container}>
 					<button className={s.fashion_card__main_image}>
@@ -123,6 +126,7 @@ const LookofthedaySlider = () => {
 					</button>
 				</div>
 			</div>
+
 			<div className={s.fashion_card__container}>
 				<div className={s.fashion_card__image_container}>
 					<button className={s.fashion_card__main_image}>
@@ -133,6 +137,7 @@ const LookofthedaySlider = () => {
 					</button>
 				</div>
 			</div>
+
 			<div className={s.fashion_card__container}>
 				<div className={s.fashion_card__image_container}>
 					<button className={s.fashion_card__main_image}>
@@ -143,6 +148,7 @@ const LookofthedaySlider = () => {
 					</button>
 				</div>
 			</div>
+
 			<div className={s.fashion_card__container}>
 				<div className={s.fashion_card__image_container}>
 					<button className={s.fashion_card__main_image}>
@@ -153,6 +159,7 @@ const LookofthedaySlider = () => {
 					</button>
 				</div>
 			</div>
+
 			<div className={s.fashion_card__container}>
 				<div className={s.fashion_card__image_container}>
 					<button className={s.fashion_card__main_image}>
@@ -163,6 +170,7 @@ const LookofthedaySlider = () => {
 					</button>
 				</div>
 			</div>
+
 			<div className={s.fashion_card__container}>
 				<div className={s.fashion_card__image_container}>
 					<button className={s.fashion_card__main_image}>

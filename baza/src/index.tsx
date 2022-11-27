@@ -11,10 +11,14 @@ import App from './App';
 import { LogInState } from './context/ProfileContext';
 import { SearchState } from './context/SearchContext';
 import { store } from './store';
+import { loadUser } from './store/slices/authSlice';
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
 );
+
+store.dispatch(loadUser(null));
+
 root.render(
 	<Provider store={store}>
 		<BrowserRouter>

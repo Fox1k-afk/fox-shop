@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import person from '../../..//assets/images/icons8-user-25.png';
 import cart from '../../../assets/images/icons8-shopping-cart-25.png';
@@ -12,8 +12,13 @@ import Modal from '../../modals/_Modal';
 import LoginRegist from '../../modals/LoginRegist';
 import SearchProduct from '../../modals/SearchProduct';
 import styles from '../Navigation.module.css';
+import { useAppSelector } from '../../../hooks/redux';
+import registr from '../../../assets/images/registr.png';
 
 const UpperNav = () => {
+	const auth = useAppSelector((state) => state.auth);
+	const navigate = useNavigate();
+
 	const {
 		modal: search,
 		open: searchOpen,
@@ -77,9 +82,19 @@ const UpperNav = () => {
 				</div>
 
 				<div className={styles.icon_button}>
-					<button onClick={loginOpen}>
-						<img src={person} alt='person' />
-					</button>
+					{auth.Loggined ? (
+						<button
+							onClick={() => {
+								navigate('/profile');
+							}}
+						>
+							<img src={person} alt='person' />
+						</button>
+					) : (
+						<button onClick={loginOpen}>
+							<img src={registr} alt='regist' />
+						</button>
+					)}
 				</div>
 
 				<div className={styles.icon_button}>

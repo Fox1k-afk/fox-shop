@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 
-import { shopAPI } from '../../../services/ShopService';
+import { shopAPI } from '../../../store/services/ShopService';
 import Loader from '../../Loader';
 import DiscountProduct from '../../main/DiscountProduct';
 

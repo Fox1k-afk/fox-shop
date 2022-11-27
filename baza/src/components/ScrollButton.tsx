@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import upArrow from '../../assets/svg/up-arrow.svg';
+import upArrow from '../assets/svg/up-arrow.svg';
 
 const ScrollButton = () => {
 	const [visible, setVisible] = useState(false);

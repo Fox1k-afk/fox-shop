@@ -78,10 +78,12 @@ const ParnyamSlider = () => {
 						<Link to={'/m/fox-basic'}>
 							<img src={slide} alt='carousel-slide1' />
 						</Link>
+
 						<Link to={'/m/verknyaya-odezhda'}>
 							<img src={slide2} alt='carousel-slide2' />
 						</Link>
 					</Slider>
+
 					<div className=' absolute bottom-[35px] left-[calc(50%-56px)] cursor-pointer w-[111px]'>
 						<Link to={'/m/verknyaya-odezhda'}>
 							<button className=' bg-black text-white p-[10px] font-medium uppercase tracking-[1.5px] w-full text-[12px] hover:opacity-80'>

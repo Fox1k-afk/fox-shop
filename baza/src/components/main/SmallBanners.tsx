@@ -17,6 +17,7 @@ const SmallBanners = () => {
 							<img src={banner1} alt='banner' />
 						</Link>
 					</div>
+
 					<div className={s.main__btn}>
 						<button className={s.main_buttonS}>forward</button>
 					</div>
@@ -30,6 +31,7 @@ const SmallBanners = () => {
 							<img src={banner2} alt='banner' />
 						</Link>
 					</div>
+
 					<div className={s.main__btn}>
 						<button className={s.main_buttonS}>forward</button>
 					</div>
@@ -43,6 +45,7 @@ const SmallBanners = () => {
 							<img src={banner3} alt='banner' />
 						</Link>
 					</div>
+
 					<div className={s.main__btn}>
 						<button className={s.main_buttonS}>forward</button>
 					</div>
@@ -56,6 +59,7 @@ const SmallBanners = () => {
 							<img src={banner4} alt='banner' />
 						</Link>
 					</div>
+
 					<div className={s.main__btn}>
 						<button className={s.main_buttonS}>forward</button>
 					</div>
