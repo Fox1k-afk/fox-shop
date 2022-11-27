@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import s from '../Parnyam.module.css';
-import { IProduct } from '../../../models/IProduct';
+
 import emptyhHeart from '../../../assets/svg/emptyheart.svg';
 import fulHeart from '../../../assets/svg/fullheart.svg';
+import { useAppDispatch } from '../../../hooks/redux';
+import { IProduct } from '../../../models/IProduct';
+import { addToCart } from '../../../store/slices/cartSlice';
+import s from '../Parnyam.module.css';
 
 interface ProductProps {
 	product: IProduct;
@@ -10,6 +13,11 @@ interface ProductProps {
 
 const Product = ({ product }: ProductProps) => {
 	const [like, setLike] = useState(false);
+	const dispatch = useAppDispatch();
+
+	const handleAddToCart = (product: IProduct) => {
+		dispatch(addToCart(product));
+	};
 
 	return (
 		<div className={s.main__product_catalog} key={product.id}>
@@ -41,7 +49,12 @@ const Product = ({ product }: ProductProps) => {
 						<span className='text-black text-[14px]'>{product.price} $.</span>
 					</div>
 					<div>
-						<button className=' bg-black text-white p-[5px]'>Add to cart</button>
+						<button
+							onClick={() => handleAddToCart(product)}
+							className=' bg-black text-white p-[5px]'
+						>
+							Add to cart
+						</button>
 					</div>
 				</div>
 			</div>

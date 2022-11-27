@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { shopAPI } from '../../../store/services/ShopService';
 import Loader from '../../Loader';
