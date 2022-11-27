@@ -9,7 +9,7 @@ import loup from '../../../assets/svg/icons8-search.svg';
 import { LoginContext } from '../../../context/ProfileContext';
 import { SearchContext } from '../../../context/SearchContext';
 import Modal from '../../modals/_Modal';
-import LoginRegist from '../../modals/LoginRegist';
+import LoginRegist from '../../modals/login/LoginRegist';
 import SearchProduct from '../../modals/SearchProduct';
 import styles from '../Navigation.module.css';
 import { useAppSelector } from '../../../hooks/redux';

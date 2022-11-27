@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { IProduct } from '../../models/IProduct';
-import emptyhHeart from '../../assets/svg/emptyheart.svg';
-import fulHeart from '../../assets/svg/fullheart.svg';
-import s from './Parnyam.module.css';
+
+import { IProduct } from '../../../models/IProduct';
+import emptyhHeart from '../../../assets/svg/emptyheart.svg';
+import fulHeart from '../../../assets/svg/fullheart.svg';
+import s from '../Parnyam.module.css';
 
 interface DiscountProductProps {
 	product: IProduct;

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import google from '../../assets/images/google.png';
-import facebook from '../../assets/svg/icons8-facebook.svg';
-import { useAppSelector } from '../../hooks/redux';
+import google from '../../../assets/images/google.png';
+import facebook from '../../../assets/svg/icons8-facebook.svg';
+import { useAppSelector } from '../../../hooks/redux';
 import LoginForm from './LoginForm';
 import s from './LoginRegist.module.css';
 

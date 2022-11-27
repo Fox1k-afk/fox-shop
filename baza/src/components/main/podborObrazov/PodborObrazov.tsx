@@ -1,6 +1,6 @@
 import React from 'react';
-import Lookoftheday from '../slider/boysSlider/LookofthedaySlider';
-import s from './Parnyam.module.css';
+import Lookoftheday from '../../slider/boysSlider/LookofthedaySlider';
+import s from '../Parnyam.module.css';
 
 const PodborObrazov = () => {
 	return (

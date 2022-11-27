@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import loupe from '../assets/svg/loupe-black.svg';
-import Product from '../components/main/Product';
+import Product from '../components/main/newClothes/Product';
 import s from './pagesStyles/Search.module.css';
 import { shopAPI } from '../store/services/ShopService';
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import s from './Parnyam.module.css';
-import { IProduct } from '../../models/IProduct';
-import emptyhHeart from '../../assets/svg/emptyheart.svg';
-import fulHeart from '../../assets/svg/fullheart.svg';
+import s from '../Parnyam.module.css';
+import { IProduct } from '../../../models/IProduct';
+import emptyhHeart from '../../../assets/svg/emptyheart.svg';
+import fulHeart from '../../../assets/svg/fullheart.svg';
 
 interface ProductProps {
 	product: IProduct;
@@ -39,6 +39,9 @@ const Product = ({ product }: ProductProps) => {
 
 					<div>
 						<span className='text-black text-[14px]'>{product.price} $.</span>
+					</div>
+					<div>
+						<button className=' bg-black text-white p-[5px]'>Add to cart</button>
 					</div>
 				</div>
 			</div>

@@ -1,17 +1,19 @@
 import { ErrorMessage, Field, Form, Formik, getIn } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
-import { LoginContext } from '../../context/ProfileContext';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { loginUser } from '../../store/slices/ActionCreators';
+import { LoginContext } from '../../../context/ProfileContext';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { loginUser } from '../../../store/slices/ActionCreators';
 import LoginButton from './LoginButton';
 import s from './LoginRegist.module.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const INITIAL_INPUT_VALUE = {
-	username: 'mor_2314',
-	password: '83r5^_',
+	username: 'johnd',
+	password: 'm38rmF$',
 };
 
 const FORM_VALIDATION_SCHEMA = {
@@ -34,9 +36,23 @@ const LoginForm = () => {
 	console.log(auth);
 
 	useEffect(() => {
+		const toastik = () => {
+			toast.success('🦄 You are loggined now!', {
+				position: 'bottom-left',
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: 'dark',
+			});
+		};
+
 		if (auth.Loggined) {
 			loginClose();
 			navigate('/parnyam');
+			toastik();
 		}
 	}, [auth.Loggined, loginClose, navigate]);
 

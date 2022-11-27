@@ -5,11 +5,25 @@ import { useAppDispatch } from '../hooks/redux';
 import { shopAPI } from '../store/services/ShopService';
 import { logoutUser } from '../store/slices/authSlice';
 import s from './pagesStyles/Profile.module.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Profile = () => {
 	const { data: user } = shopAPI.useFetchUserQuery('');
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
+	const toastkik = () => {
+		toast.warn('🦄 You are log out of the acc!', {
+			position: 'bottom-left',
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: 'dark',
+		});
+	};
 
 	return (
 		<div className={s.profile__wrapper}>
@@ -25,6 +39,7 @@ const Profile = () => {
 							onClick={() => {
 								dispatch(logoutUser(null));
 								navigate('/parnyam');
+								toastkik();
 							}}
 						>
 							log out of the account

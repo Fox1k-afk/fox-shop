@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 
 import { shopAPI } from '../../../store/services/ShopService';
 import Loader from '../../Loader';
-import DiscountProduct from '../../main/DiscountProduct';
+import DiscountProduct from '../../main/discounts/DiscountProduct';
 
 function SampleNextArrow(props: any) {
 	const { className, style, onClick } = props;

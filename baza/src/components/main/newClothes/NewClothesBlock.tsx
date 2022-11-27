@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import { shopAPI } from '../../store/services/ShopService';
-import Loader from '../Loader';
-import s from './Parnyam.module.css';
+import { shopAPI } from '../../../store/services/ShopService';
+import Loader from '../../Loader';
+import s from '../Parnyam.module.css';
 import Product from './Product';
 
 const NewClothesBlock = () => {

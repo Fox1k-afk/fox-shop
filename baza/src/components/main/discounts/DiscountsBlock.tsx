@@ -1,6 +1,6 @@
 import React from 'react';
-import s from './Parnyam.module.css';
-import DiscountsSlider from '../slider/boysSlider/DiscountsSlider';
+import s from '../Parnyam.module.css';
+import DiscountsSlider from '../../slider/boysSlider/DiscountsSlider';
 
 const DiscountsBlock = () => {
 	return (
