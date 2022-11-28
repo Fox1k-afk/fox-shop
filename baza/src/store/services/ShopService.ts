@@ -25,5 +25,10 @@ export const shopAPI = createApi({
 				url: '/users/1',
 			}),
 		}),
+		fetchProduct: build.query<IProduct[], any>({
+			query: (id) => ({
+				url: `products/${id}`,
+			}),
+		}),
 	}),
 });

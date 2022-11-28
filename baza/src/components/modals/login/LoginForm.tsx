@@ -49,12 +49,12 @@ const LoginForm = () => {
 			});
 		};
 
-		if (auth.Loggined) {
+		if (auth.loggined) {
 			loginClose();
 			navigate('/parnyam');
 			toastik();
 		}
-	}, [auth.Loggined, loginClose, navigate]);
+	}, [auth.loggined, loginClose, navigate]);
 
 	function LoginInput({ field, form: { errors } }: any) {
 		return (

@@ -58,7 +58,7 @@ const CartProduct = ({ product }: CartProductProps) => {
 				</div>
 
 				<div className={s.cart__price}>
-					{Math.floor(product.price * product.cartQuantity!)} $
+					{(product.price * product.cartQuantity!).toFixed(2)} $
 				</div>
 
 				<button

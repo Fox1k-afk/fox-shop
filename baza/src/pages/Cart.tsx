@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import emptyCart from '../assets/svg/empty-cart.svg';
-import { useAppSelector } from '../hooks/redux';
+import { useAppSelector, useAppDispatch } from '../hooks/redux';
 import CartProduct from './CartProduct';
 import s from './pagesStyles/Cart.module.css';
+import { ToastContainer } from 'react-toastify';
+import { clearCart, getTotals } from '../store/slices/cartSlice';
+import { IProduct } from '../models/IProduct';
 
 const Cart = () => {
 	const navigate = useNavigate();
 	const cart = useAppSelector((state) => state.cart);
+	const dispatch = useAppDispatch();
+
+	const handleCearCart = () => {
+		dispatch(clearCart());
+	};
+
+	useEffect(() => {
+		dispatch(getTotals());
+	}, [cart, dispatch]);
 
 	return (
 		<div className={s.cart__wrapper}>
+			<ToastContainer />
 			<div className={s.cart__content_container}>
 				<div>
 					<div className={s.cart__page_header}>
@@ -23,7 +36,13 @@ const Cart = () => {
 
 						{cart.cartItems.length >= 1 && (
 							<div className={s.cart__resest}>
-								<button>Clear a cart</button>
+								<button
+									onClick={() => {
+										handleCearCart();
+									}}
+								>
+									Clear a cart
+								</button>
 							</div>
 						)}
 					</div>
@@ -54,8 +73,8 @@ const Cart = () => {
 							<div className={s.cart__order_wrapper}>
 								<div className={s.cart__order}>
 									<div className={s.cart__positions}>
-										{cart.cartItems.map((product) => (
-											<CartProduct product={product} />
+										{cart.cartItems.map((product: IProduct) => (
+											<CartProduct key={product.id} product={product} />
 										))}
 									</div>
 
@@ -76,7 +95,9 @@ const Cart = () => {
 											</div>
 
 											<div className={s.cart__price}>
-												<div className={s.cart__price_wrapper}>{cart.cartTotalAmount}</div>
+												<div className={s.cart__price_wrapper}>
+													{cart.cartTotalAmount.toFixed(2)} $
+												</div>
 											</div>
 										</div>
 

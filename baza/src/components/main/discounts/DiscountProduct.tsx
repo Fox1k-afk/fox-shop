@@ -43,10 +43,11 @@ const DiscountProduct = ({ product }: DiscountProductProps) => {
 					</span>
 
 					<div>
-						<span className={s.product_card__info_price}>{product.price} $.</span>
-						<span className={s.product_card__info_oldprice}>
+						<span className={s.product_card__info_price}>
 							{Math.floor(product.price * 80) / 100} $.
 						</span>
+
+						<span className={s.product_card__info_oldprice}>{product.price} $.</span>
 					</div>
 				</div>
 			</div>

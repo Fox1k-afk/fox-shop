@@ -35,7 +35,7 @@ const LoginRegist = ({ onClose }: LoginRegistProps) => {
 								<div className={s.modal__form_title}>From fox account</div>
 								<LoginForm />
 								{auth.loginStatus === 'rejected' ? (
-									<p className='mt-[25px]'>{auth.loginError}</p>
+									<p className='mt-[25px] text-red-600'>{auth.loginError}</p>
 								) : null}
 							</div>
 

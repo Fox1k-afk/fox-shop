@@ -13,11 +13,8 @@ export const loginUser = createAsyncThunk(
 			localStorage.setItem('userToken', res.data.token);
 
 			return res.data.token;
-		} catch (err) {
-			if (err instanceof Error) {
-				console.log(err.message);
-				return rejectWithValue(err.message);
-			}
+		} catch (err: any) {
+			return rejectWithValue(err.response.data);
 		}
 	}
 );

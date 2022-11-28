@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import emptyhHeart from '../../../assets/svg/emptyheart.svg';
 import fulHeart from '../../../assets/svg/fullheart.svg';
@@ -24,7 +25,9 @@ const Product = ({ product }: ProductProps) => {
 			<div className={s.product_card__container}>
 				<div className={s.product_card__image_container}>
 					<div className={s.product_card__main_image}>
-						<img src={product.image} alt={product.title} />
+						<Link to={`/product/${product.id}`} state={product}>
+							<img src={product.image} alt={product.title} />
+						</Link>
 					</div>
 
 					<button

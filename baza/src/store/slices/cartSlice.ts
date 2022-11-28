@@ -1,6 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-interface cartState {
+
+export interface cartState {
 	cartItems: any[];
 	cartTotalQuantity: number;
 	cartTotalAmount: number;
@@ -74,9 +75,40 @@ const cartSLice = createSlice({
 			}
 			localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
 		},
+
+		clearCart(state, action: PayloadAction) {
+			state.cartItems = [];
+
+			toast.error(`Cart cleared`, {
+				position: 'bottom-left',
+			});
+			localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
+		},
+
+		getTotals(state, action: PayloadAction) {
+			let { total, quantity } = state.cartItems.reduce(
+				(cartTotal, cartItem) => {
+					const { price, cartQuantity } = cartItem;
+					const itemTotal = price * cartQuantity;
+
+					cartTotal.total += itemTotal;
+					cartTotal.quantity += cartQuantity;
+
+					return cartTotal;
+				},
+				{
+					total: 0,
+					quantity: 0,
+				}
+			);
+
+			state.cartTotalQuantity = quantity;
+			state.cartTotalAmount = total;
+		},
 	},
 });
 
-export const { addToCart, removeFromCart, decreaseCart } = cartSLice.actions;
+export const { addToCart, removeFromCart, decreaseCart, clearCart, getTotals } =
+	cartSLice.actions;
 
 export default cartSLice.reducer;

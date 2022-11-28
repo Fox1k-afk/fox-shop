@@ -3,20 +3,21 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import person from '../../..//assets/images/icons8-user-25.png';
 import cart from '../../../assets/images/icons8-shopping-cart-25.png';
+import registr from '../../../assets/images/registr.png';
 import logoUA from '../../../assets/svg/I_stand_with_Ukraine_banner.svg';
 import favorite from '../../../assets/svg/icons8-box.svg';
 import loup from '../../../assets/svg/icons8-search.svg';
 import { LoginContext } from '../../../context/ProfileContext';
 import { SearchContext } from '../../../context/SearchContext';
+import { useAppSelector } from '../../../hooks/redux';
 import Modal from '../../modals/_Modal';
 import LoginRegist from '../../modals/login/LoginRegist';
 import SearchProduct from '../../modals/SearchProduct';
 import styles from '../Navigation.module.css';
-import { useAppSelector } from '../../../hooks/redux';
-import registr from '../../../assets/images/registr.png';
 
 const UpperNav = () => {
 	const auth = useAppSelector((state) => state.auth);
+	const { cartTotalQuantity } = useAppSelector((state) => state.cart);
 	const navigate = useNavigate();
 
 	const {
@@ -82,7 +83,7 @@ const UpperNav = () => {
 				</div>
 
 				<div className={styles.icon_button}>
-					{auth.Loggined ? (
+					{auth.loggined ? (
 						<button
 							onClick={() => {
 								navigate('/profile');
@@ -106,6 +107,9 @@ const UpperNav = () => {
 				<div className={styles.icon_button}>
 					<Link to={'/cart'}>
 						<img src={cart} alt='cart' />
+						<div className='absolute bg-white text-black rounded-2xl w-[16px] h-[16px] font-medium text-[11px] -top-[5px] -right-[15px] flex items-center justify-center'>
+							{cartTotalQuantity}
+						</div>
 					</Link>
 				</div>
 			</div>

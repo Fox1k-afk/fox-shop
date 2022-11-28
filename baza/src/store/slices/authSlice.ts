@@ -6,13 +6,12 @@ interface UserState {
 	userToken: string | null;
 	loginStatus: string;
 	loginError: string;
-	userLoaded: boolean;
+	loggined?: boolean;
 }
 const initialState: UserState = {
 	userToken: localStorage.getItem('userToken'),
 	loginStatus: '',
 	loginError: '',
-	userLoaded: false,
 };
 
 const authSlice = createSlice({
@@ -26,8 +25,7 @@ const authSlice = createSlice({
 				return {
 					...state,
 					userToken,
-					userLoaded: true,
-					Loggined: true,
+					loggined: true,
 				};
 			}
 		},
@@ -39,8 +37,7 @@ const authSlice = createSlice({
 				userToken: '',
 				loginStatus: '',
 				loginError: '',
-				userLoaded: false,
-				Loggined: false,
+				loggined: false,
 			};
 		},
 	},
@@ -56,8 +53,7 @@ const authSlice = createSlice({
 					...state,
 					userToken: action.payload,
 					loginStatus: 'success',
-					userLoaded: true,
-					Loggined: true,
+					loggined: true,
 				};
 			} else return state;
 		});

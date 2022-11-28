@@ -12,4 +12,5 @@ export interface IProduct {
 	image: string;
 	rating: Rating;
 	cartQuantity?: number;
+	cartTotalAmount?: number;
 }
