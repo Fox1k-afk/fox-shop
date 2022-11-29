@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 import emptyCart from '../assets/svg/empty-cart.svg';
-import { useAppSelector, useAppDispatch } from '../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../hooks/redux';
+import { IProduct } from '../models/IProduct';
+import { clearCart } from '../store/slices/cartSlice';
 import CartProduct from './CartProduct';
 import s from './pagesStyles/Cart.module.css';
-import { ToastContainer } from 'react-toastify';
-import { clearCart, getTotals } from '../store/slices/cartSlice';
-import { IProduct } from '../models/IProduct';
 
 const Cart = () => {
 	const navigate = useNavigate();
@@ -17,10 +17,6 @@ const Cart = () => {
 	const handleCearCart = () => {
 		dispatch(clearCart());
 	};
-
-	useEffect(() => {
-		dispatch(getTotals());
-	}, [cart, dispatch]);
 
 	return (
 		<div className={s.cart__wrapper}>

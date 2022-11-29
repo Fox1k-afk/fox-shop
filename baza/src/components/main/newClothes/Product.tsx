@@ -25,9 +25,9 @@ const Product = ({ product }: ProductProps) => {
 			<div className={s.product_card__container}>
 				<div className={s.product_card__image_container}>
 					<div className={s.product_card__main_image}>
-						<Link to={`/product/${product.id}`} state={product}>
+						<a href={`/product/${product.id}`}>
 							<img src={product.image} alt={product.title} />
-						</Link>
+						</a>
 					</div>
 
 					<button

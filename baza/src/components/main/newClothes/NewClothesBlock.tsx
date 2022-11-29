@@ -6,7 +6,7 @@ import s from '../Parnyam.module.css';
 import Product from './Product';
 
 const NewClothesBlock = () => {
-	const { data: products, isLoading } = shopAPI.useFetchAllProductsQuery(30);
+	const { data: products, isLoading } = shopAPI.useFetchAllProductsQuery(20);
 
 	return (
 		<div className={s.main__content_item}>

@@ -11,16 +11,7 @@ import ParnyamSlider from '../components/slider/boysSlider/ParnyamSlider';
 
 // import Loader from '../components/Loader';
 // import upArrow from '../assets/svg/up-arrow.svg';
-import { useAppDispatch, useAppSelector } from '../hooks/redux';
-import { getTotals } from '../store/slices/cartSlice';
 const Parnyam = () => {
-	const dispatch = useAppDispatch();
-	const cart = useAppSelector((state) => state.cart);
-
-	useEffect(() => {
-		dispatch(getTotals());
-	}, [dispatch, cart]);
-
 	return (
 		<div>
 			<div className={s.main__wrapper}>

@@ -62,7 +62,7 @@ function SamplePrevArrow(props: any) {
 }
 
 const DiscountsSlider = () => {
-	const { data: products, isLoading } = shopAPI.useFetchAllProductsQuery(30);
+	const { data: products, isLoading } = shopAPI.useFetchAllProductsQuery(10);
 
 	const settings = {
 		infinite: false,

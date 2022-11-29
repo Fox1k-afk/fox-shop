@@ -8,7 +8,7 @@ export const shopAPI = createApi({
 	baseQuery: fetchBaseQuery({ baseUrl: 'https://fakestoreapi.com' }),
 	endpoints: (build) => ({
 		fetchAllProducts: build.query<IProduct[], number>({
-			query: (limit: number = 5) => ({
+			query: (limit: number = 15) => ({
 				url: `/products`,
 				params: {
 					limit: limit,
@@ -25,9 +25,10 @@ export const shopAPI = createApi({
 				url: '/users/1',
 			}),
 		}),
-		fetchProduct: build.query<IProduct[], any>({
+		fetchProduct: build.query<IProduct, any>({
 			query: (id) => ({
 				url: `products/${id}`,
+				params: id,
 			}),
 		}),
 	}),
