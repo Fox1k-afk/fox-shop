@@ -8,7 +8,7 @@ import {
 	addToCart,
 	decreaseCart,
 	removeFromCart,
-} from '../store/slices/cartSlice';
+} from '../store/slices/CartSlice';
 
 interface CartProductProps {
 	product: IProduct;

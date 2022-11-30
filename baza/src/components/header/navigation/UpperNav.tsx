@@ -5,7 +5,7 @@ import person from '../../..//assets/images/icons8-user-25.png';
 import carT from '../../../assets/images/icons8-shopping-cart-25.png';
 import registr from '../../../assets/images/registr.png';
 import logoUA from '../../../assets/svg/I_stand_with_Ukraine_banner.svg';
-import favorite from '../../../assets/svg/icons8-box.svg';
+import favorite from '../../../assets/images/favorite.png';
 import loup from '../../../assets/svg/icons8-search.svg';
 import { LoginContext } from '../../../context/ProfileContext';
 import { SearchContext } from '../../../context/SearchContext';
@@ -14,7 +14,7 @@ import Modal from '../../modals/_Modal';
 import LoginRegist from '../../modals/login/LoginRegist';
 import SearchProduct from '../../modals/SearchProduct';
 import styles from '../Navigation.module.css';
-import { getTotals } from '../../../store/slices/cartSlice';
+import { getTotals } from '../../../store/slices/CartSlice';
 
 const UpperNav = () => {
 	const dispatch = useAppDispatch();
@@ -100,7 +100,7 @@ const UpperNav = () => {
 							<img src={person} alt='person' />
 						</button>
 					) : (
-						<button onClick={loginOpen}>
+						<button onClick={loginOpen} className='w-[22px]'>
 							<img src={registr} alt='regist' />
 						</button>
 					)}
@@ -108,13 +108,13 @@ const UpperNav = () => {
 
 				<div className={styles.icon_button}>
 					<Link to={'/favorites'}>
-						<img src={favorite} alt='favorite' />
+						<img src={favorite} alt='favorite' className='w-[28px]' />
 					</Link>
 				</div>
 
 				<div className={styles.icon_button}>
 					<Link to={'/cart'}>
-						<img src={carT} alt='cart' />
+						<img src={carT} alt='cart' className='w-[30px]' />
 						<div className='absolute bg-white text-black rounded-2xl w-[16px] h-[16px] font-medium text-[11px] -top-[5px] -right-[15px] flex items-center justify-center'>
 							{cartTotalQuantity}
 						</div>

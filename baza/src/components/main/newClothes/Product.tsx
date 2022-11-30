@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
-import emptyhHeart from '../../../assets/svg/emptyheart.svg';
-import fulHeart from '../../../assets/svg/fullheart.svg';
-import { useAppDispatch } from '../../../hooks/redux';
+import emptyHeart from '../../../assets/svg/emptyheart.svg';
+import fullHeart from '../../../assets/svg/fullheart.svg';
 import { IProduct } from '../../../models/IProduct';
-import { addToCart } from '../../../store/slices/cartSlice';
 import s from '../Parnyam.module.css';
+import { useAppDispatch } from '../../../hooks/redux';
+import {
+	addToFavorites,
+	removeFromFavorites,
+} from '../../../store/slices/FavoritesSlice';
 
 interface ProductProps {
 	product: IProduct;
@@ -14,10 +16,17 @@ interface ProductProps {
 
 const Product = ({ product }: ProductProps) => {
 	const [like, setLike] = useState(false);
+
 	const dispatch = useAppDispatch();
 
-	const handleAddToCart = (product: IProduct) => {
-		dispatch(addToCart(product));
+	const setFavorite = (product: IProduct) => {
+		dispatch(addToFavorites(product));
+		setLike(true);
+	};
+
+	const delFavorite = (product: IProduct) => {
+		dispatch(removeFromFavorites(product));
+		setLike(false);
 	};
 
 	return (
@@ -30,16 +39,21 @@ const Product = ({ product }: ProductProps) => {
 						</a>
 					</div>
 
-					<button
-						onClick={() => setLike((prev) => !prev)}
-						className={s.product_card__like}
-					>
-						{like ? (
-							<img src={fulHeart} alt='liked' className=' h-[15px]' />
-						) : (
-							<img src={emptyhHeart} alt='not liked' className=' h-[15px]' />
-						)}
-					</button>
+					{like ? (
+						<button
+							className={s.product_card__like}
+							onClick={() => delFavorite(product!)}
+						>
+							<img src={fullHeart} alt='liked' className=' h-[15px]' />
+						</button>
+					) : (
+						<button
+							className={s.product_card__like}
+							onClick={() => setFavorite(product!)}
+						>
+							<img src={emptyHeart} alt='not-liked' className=' h-[15px]' />
+						</button>
+					)}
 				</div>
 
 				<div className={s.product_card__info}>
@@ -50,14 +64,6 @@ const Product = ({ product }: ProductProps) => {
 
 					<div>
 						<span className='text-black text-[14px]'>{product.price} $.</span>
-					</div>
-					<div>
-						<button
-							onClick={() => handleAddToCart(product)}
-							className=' bg-black text-white p-[5px]'
-						>
-							Add to cart
-						</button>
 					</div>
 				</div>
 			</div>

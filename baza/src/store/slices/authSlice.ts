@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { loginUser } from './ActionCreators';
 
@@ -30,7 +30,7 @@ const authSlice = createSlice({
 			}
 		},
 
-		logoutUser(state, action): any {
+		logoutUser(state, action) {
 			localStorage.removeItem('userToken');
 			return {
 				...state,
@@ -58,7 +58,7 @@ const authSlice = createSlice({
 			} else return state;
 		});
 
-		builder.addCase(loginUser.rejected, (state, action: any) => {
+		builder.addCase(loginUser.rejected, (state, action) => {
 			return {
 				...state,
 				loginStatus: 'rejected',

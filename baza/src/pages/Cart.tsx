@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import emptyCart from '../assets/svg/empty-cart.svg';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { IProduct } from '../models/IProduct';
-import { clearCart } from '../store/slices/cartSlice';
+import { clearCart } from '../store/slices/CartSlice';
 import CartProduct from './CartProduct';
 import s from './pagesStyles/Cart.module.css';
 

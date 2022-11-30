@@ -5,8 +5,8 @@ import { ToastContainer } from 'react-toastify';
 import eye from '../assets/images/eye.png';
 import picture1 from '../assets/images/picture1.png';
 import picture2 from '../assets/images/picture2.png';
-import emptyhHeart from '../assets/svg/emptyheart.svg';
-import fulHeart from '../assets/svg/fullheart.svg';
+import emptyHeart from '../assets/svg/emptyheart.svg';
+import fullHeart from '../assets/svg/fullheart.svg';
 import facebook from '../assets/svg/icons8-facebook.svg';
 import telegram from '../assets/svg/icons8-telegram-app.svg';
 import info from '../assets/svg/info.svg';
@@ -14,19 +14,33 @@ import Loader from '../components/Loader';
 import { useAppDispatch } from '../hooks/redux';
 import { IProduct } from '../models/IProduct';
 import { shopAPI } from '../store/services/ShopService';
-import { addToCart } from '../store/slices/cartSlice';
+import { addToCart } from '../store/slices/CartSlice';
+import {
+	addToFavorites,
+	removeFromFavorites,
+} from '../store/slices/FavoritesSlice';
 import s from './pagesStyles/SoloProduct.module.css';
 
 const SoloProduct = () => {
 	const { id } = useParams();
+	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
 	const { data: product, isLoading, isError } = shopAPI.useFetchProductQuery(id);
 
-	const navigate = useNavigate();
 	const [like, setLike] = useState(false);
-	const dispatch = useAppDispatch();
 
 	const handleAddToCart = (product: IProduct) => {
 		dispatch(addToCart(product));
+	};
+
+	const setFavorite = (product: IProduct) => {
+		dispatch(addToFavorites(product));
+		setLike(true);
+	};
+
+	const delFavorite = (product: IProduct) => {
+		dispatch(removeFromFavorites(product));
+		setLike(false);
 	};
 	return (
 		<div className={s.product__wrapper_container}>
@@ -68,16 +82,15 @@ const SoloProduct = () => {
 
 							<div className={s.product__title}>
 								<h1>{product?.title}</h1>
-								<button
-									onClick={() => setLike((prev) => !prev)}
-									className={s.product_card__like}
-								>
-									{like ? (
-										<img src={fulHeart} alt='liked' className=' h-[15px]' />
-									) : (
-										<img src={emptyhHeart} alt='not liked' className=' h-[15px]' />
-									)}
-								</button>
+								{like ? (
+									<button onClick={() => delFavorite(product!)}>
+										<img src={fullHeart} alt='liked' />
+									</button>
+								) : (
+									<button onClick={() => setFavorite(product!)}>
+										<img src={emptyHeart} alt='not-liked' />
+									</button>
+								)}
 							</div>
 
 							<div className={`${s.product__category} ${s.product__category_desc}`}>

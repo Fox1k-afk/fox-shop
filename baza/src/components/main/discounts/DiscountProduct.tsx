@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 
 import { IProduct } from '../../../models/IProduct';
-import emptyhHeart from '../../../assets/svg/emptyheart.svg';
-import fulHeart from '../../../assets/svg/fullheart.svg';
+import emptyHeart from '../../../assets/svg/emptyheart.svg';
+import fullHeart from '../../../assets/svg/fullheart.svg';
 import s from '../Parnyam.module.css';
+import { useAppDispatch } from '../../../hooks/redux';
+import {
+	addToFavorites,
+	removeFromFavorites,
+} from '../../../store/slices/FavoritesSlice';
 
 interface DiscountProductProps {
 	product: IProduct;
@@ -11,6 +16,18 @@ interface DiscountProductProps {
 
 const DiscountProduct = ({ product }: DiscountProductProps) => {
 	const [like, setLike] = useState(false);
+
+	const dispatch = useAppDispatch();
+
+	const setFavorite = (product: IProduct) => {
+		dispatch(addToFavorites(product));
+		setLike(true);
+	};
+
+	const delFavorite = (product: IProduct) => {
+		dispatch(removeFromFavorites(product));
+		setLike(false);
+	};
 
 	return (
 		<div className={s.main__product_card} key={product.id}>
@@ -20,21 +37,24 @@ const DiscountProduct = ({ product }: DiscountProductProps) => {
 						<img src={product.image} alt={product.title} />
 					</div>
 
-					<button
-						onClick={() => setLike((prev) => !prev)}
-						className={s.product_card__like}
-					>
-						{like ? (
-							<img src={fulHeart} alt='liked' className=' h-[15px]' />
-						) : (
-							<img src={emptyhHeart} alt='not liked' className=' h-[15px]' />
-						)}
-					</button>
+					{like ? (
+						<button
+							className={s.product_card__like}
+							onClick={() => delFavorite(product!)}
+						>
+							<img src={fullHeart} alt='liked' className=' h-[15px]' />
+						</button>
+					) : (
+						<button
+							className={s.product_card__like}
+							onClick={() => setFavorite(product!)}
+						>
+							<img src={emptyHeart} alt='not-liked' className=' h-[15px]' />
+						</button>
+					)}
 				</div>
 
-				<div className={s.product_card__discount}>
-					-{Math.floor(Math.random() * 20) + 10}%
-				</div>
+				<div className={s.product_card__discount}>-{Math.floor(20)}%</div>
 
 				<div className={s.product_card__info}>
 					<span className={s.product_card__info_title}>{product.title}</span>
