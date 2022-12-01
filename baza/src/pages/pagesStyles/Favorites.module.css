@@ -37,3 +37,15 @@
 .favorites_button {
 	@apply py-[20px] px-[25px] uppercase tracking-[1.5px] w-full text-[12px] bg-black text-white;
 }
+
+.favorites__reset {
+	@apply flex justify-center mt-[25px];
+}
+
+.favorites__reset button {
+	@apply uppercase text-[11px] border-b-black border-b-[2px] pb-[2px] tracking-[1.2px];
+}
+
+.favorites__product_catalog {
+	@apply mt-0 ml-0 mr-[20px] mb-[20px] lg:w-[calc(25%-15px)];
+}

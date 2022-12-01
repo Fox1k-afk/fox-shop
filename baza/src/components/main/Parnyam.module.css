@@ -116,6 +116,10 @@
 	@apply mb-[10px];
 }
 
+.product_card__info span:last-child {
+	@apply mb-0;
+}
+
 .product_card__info_title {
 	@apply overflow-hidden block;
 }
