@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 export interface favoritesState {
 	favoriteItems: any[];
@@ -36,9 +36,19 @@ const favoritesSlice = createSlice({
 				position: 'bottom-left',
 			});
 		},
+
+		clearFavorites(state, action: PayloadAction) {
+			state.favoriteItems = [];
+
+			toast.error(`Favorites cleared`, {
+				position: 'bottom-left',
+			});
+			localStorage.setItem('favoriteItems', JSON.stringify(state.favoriteItems));
+		},
 	},
 });
 
-export const { addToFavorites, removeFromFavorites } = favoritesSlice.actions;
+export const { addToFavorites, removeFromFavorites, clearFavorites } =
+	favoritesSlice.actions;
 
 export default favoritesSlice.reducer;

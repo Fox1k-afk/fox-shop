@@ -1,0 +1,30 @@
+.fashion_card__container {
+	@apply relative h-[660px] pl-[10px] pr-[10px];
+}
+
+.fashion_card__image_container {
+	@apply h-full;
+}
+
+.fashion_card__main_image {
+	@apply w-full overflow-hidden h-full relative;
+}
+
+.fashion_card__main_image img {
+	@apply transition-all duration-700;
+}
+.fashion_card__main_image:hover img {
+	@apply scale-110;
+}
+
+.complete_look {
+	@apply cursor-pointer flex absolute items-center justify-center h-[27px] bottom-[10px] left-[10px] p-[8px] z-[2] bg-[hsla(0,0%,100%,.5)];
+}
+
+.complete_look p {
+	@apply uppercase text-[12px] font-bold text-[#393939];
+}
+
+.nextArrow {
+	@apply absolute -top-[75px] right-0 flex items-center justify-center align-middle pt-[15px] pr-[16px] pb-[24px] pl-[15px] h-[20px] w-[20px] cursor-pointer z-[20] bg-black;
+}

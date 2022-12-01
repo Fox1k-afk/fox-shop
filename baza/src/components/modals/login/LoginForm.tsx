@@ -51,7 +51,7 @@ const LoginForm = () => {
 
 		if (auth.loggined) {
 			loginClose();
-			navigate('/parnyam');
+			navigate('/main');
 			toastik();
 		}
 	}, [auth.loggined, loginClose, navigate]);
