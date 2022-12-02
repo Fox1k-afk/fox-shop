@@ -6,7 +6,7 @@ import styles from '../../Header.module.css';
 const Clothes = () => {
 	return (
 		<div className={styles.drop_wrapper}>
-			<div className={styles.drop_container}>
+			<div className={`${styles.drop_container} ${'hidden'}`}>
 				<div className={styles.drop_categories}>
 					<div className={`${styles.drop_category} ${'mb-[5px]'}`}>
 						<Link to={'/'}>

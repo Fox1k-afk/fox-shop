@@ -61,16 +61,16 @@ const UpperNav = () => {
 					to={'/main'}
 					className={({ isActive }) => (isActive ? styles.active : undefined)}
 				>
-					<span>For Boys</span>
+					<span>main</span>
 				</NavLink>
 			</div>
 
 			<div className={styles.header_nav_up_top_link}>
 				<NavLink
-					to={'/devushkam'}
+					to={'/search'}
 					className={({ isActive }) => (isActive ? styles.active : undefined)}
 				>
-					<span>For Girls</span>
+					<span>search</span>
 				</NavLink>
 			</div>
 
