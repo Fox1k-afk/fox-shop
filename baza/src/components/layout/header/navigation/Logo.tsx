@@ -1,7 +1,7 @@
 import React from 'react';
 
 import logo from '../../../../assets/svg/fox.svg';
-import styles from '../Navigation.module.css';
+import styles from '../Header.module.css';
 
 const Logo = () => {
 	return (

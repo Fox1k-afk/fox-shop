@@ -7,7 +7,7 @@ import carT from '../../../../assets/images/icons8-shopping-cart-25.png';
 import registr from '../../../../assets/images/registr.png';
 import logoUA from '../../../../assets/svg/I_stand_with_Ukraine_banner.svg';
 import loup from '../../../../assets/svg/icons8-search.svg';
-import styles from '../Navigation.module.css';
+import styles from '../Header.module.css';
 import { LoginContext } from '../../../../context/ProfileContext';
 import { SearchContext } from '../../../../context/SearchContext';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';

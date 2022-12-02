@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../Navigation.module.css';
+import styles from '../Header.module.css';
 import Logo from './Logo';
 import LowerNav from './LowerNav';
 import UpperNav from './UpperNav';
