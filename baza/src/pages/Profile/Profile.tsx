@@ -7,9 +7,10 @@ import { logoutUser } from '../../store/slices/AuthSlice';
 import s from './Profile.module.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loader from '../../components/universal/Loader';
 
 const Profile = () => {
-	const { data: user } = shopAPI.useFetchUserQuery('');
+	const { data: user, isLoading } = shopAPI.useFetchUserQuery('');
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 	const toastkik = () => {
@@ -47,6 +48,7 @@ const Profile = () => {
 					</div>
 				</div>
 				<div className={s.profile__content}>
+					{isLoading && <Loader />}
 					<div className={s.profile__user_container}>
 						<div className={s.profile__user_info}>
 							<span className=' text-blue-500'>Username: {user?.username}</span>

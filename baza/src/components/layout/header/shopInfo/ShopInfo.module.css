@@ -1,5 +1,5 @@
 .main_container_top {
-	@apply max-w-[1210px] w-full mx-auto flex justify-center py-[5px] px-[20px];
+	@apply max-w-[1210px] w-full mx-auto flex justify-center py-[5px] px-[20px] max-notebook:hidden;
 }
 
 .nav_container_top {
@@ -27,11 +27,17 @@
 }
 
 .phone_link {
-	@apply font-sans text-black text-[13px] font-normal whitespace-nowrap ml-[18px] mt-[1px];
+	@apply font-sans text-black text-[13px] font-normal whitespace-nowrap ml-[18px] mt-[1px] max-timelap:hidden;
+}
+.working_hours_container {
+	@apply z-[25];
+}
+.working_hours {
+	@apply absolute bg-white text-black top-[30px] -left-[9px] w-[142px] px-[15px] py-[15px] shadow-md;
 }
 
 .working_hours {
-	@apply absolute bg-white text-black top-[30px] -left-[9px] w-[142px] px-[15px] py-[15px] shadow-md;
+	@apply max-timelap:absolute max-timelap:z-30 max-timelap:top-[25px] max-timelap:-left-[52px];
 }
 
 .workking_hours_label {

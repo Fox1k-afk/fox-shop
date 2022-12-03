@@ -3,31 +3,36 @@
 }
 
 .main_container {
-	@apply max-w-[1210px] w-full bg-black;
+	@apply max-w-[1210px] w-full bg-black z-[5]
+	max-tabl:fixed;
 }
 
 .container {
-	@apply w-full h-[90px] my-0 mx-auto py-0 px-[20px] flex items-center justify-between relative;
+	@apply w-full h-[90px] my-0 mx-auto py-0 px-[20px] flex items-center justify-between relative max-notebook:h-[90px]
+	max-tabl:h-[61px];
 }
 
 .logo_container {
-	@apply flex;
+	@apply flex max-tablet:w-full;
 }
 
 .logo_wrapp {
-	@apply z-[5] w-[88px];
+	@apply z-[30] w-[88px] 
+	 max-notebook:absolute max-notebook:m-auto max-notebook:left-0 max-notebook:right-0 max-notebook:top-2
+	  max-tabl:w-[65px] max-tabl:my-auto max-tabl:ml-16;
 }
 
 .logo_img {
-	@apply h-[75px] flex self-center;
+	@apply h-[75px] flex self-center 
+	max-tabl:w-[50px] max-tabl:h-[50px];
 }
 
 .menu_nav_container {
-	@apply ml-[20px] w-full pt-[10px] flex flex-col h-full items-start justify-end;
+	@apply ml-[20px] w-full pt-[10px] flex flex-col h-full items-start justify-end max-notebook:flex-row max-notebook:items-center max-notebook:z-40;
 }
 
 .header_nav_container {
-	@apply flex items-center justify-between my-0 mx-[15px];
+	@apply flex items-center justify-between my-0 mx-[15px] max-notebook:hidden;
 }
 
 .header_nav_container_category {
@@ -124,4 +129,52 @@
 
 .drop_link_subtitle {
 	@apply text-[11px] uppercase block tracking-[1px] text-stone-600 pb-[1px] hover:border-b-[1px] border-black hover:-mb-[1px];
+}
+
+.showOnMobile {
+	@apply notebook:hidden tabl:ml-auto flex items-center justify-start;
+}
+
+.hamburger_slider .hamburger_inner {
+	@apply top-[2px];
+}
+
+.hamburger {
+	@apply lapt:hidden z-[4] py-[15px] pr-[15px] pl-0 inline-block cursor-pointer transition-all bg-transparent border-0;
+}
+
+.hamburger_box {
+	@apply w-[16px] h-[14px] inline-block relative;
+}
+
+.hamburger_inner {
+	@apply block top-1/2 -mt-[2px] w-[16px] h-[2px] bg-white absolute transition-all  
+	before:top-[6px]  before:transition-all  before:block  before:w-[16px]  before:h-[2px]  before:bg-white  before:absolute
+	after:top-[12px]	after:-bottom-[10px]	after:block	after:w-[16px]	after:h-[2px]	after:bg-white	after:absolute	after:transition-all;
+}
+
+.header_phones_container {
+	@apply flex items-center mr-[15px] relative z-[10] min-w-[17px];
+}
+
+.header__icon_button {
+	@apply max-lapt:mr-[15px] relative mr-[25px] min-w-[20px];
+}
+
+.side_bar {
+	@apply absolute -left-[9999px];
+}
+
+.side_bar__active {
+	@apply absolute left-0 w-full z-[20] h-screen transition-all duration-300
+	max-tablet:fixed max-tablet:top-[61px] 
+	notebook:max-w-[370px] max-notebook:top-[90px] max-notebook:fixed;
+}
+
+.side_bar__container {
+	@apply h-full flex transform my-0 mx-auto max-w-[1210px] transition-transform duration-300;
+}
+
+.side_bar__links {
+	@apply border-t-[1px] border-r-neutral-500 w-[370px] min-w-[370px] h-[calc(100%-61px)] pt-[20px] px-0 pb-[15px] overflow-y-auto scroll-smooth bg-black flex flex-col justify-between;
 }

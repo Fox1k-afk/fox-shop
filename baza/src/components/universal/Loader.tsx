@@ -3,12 +3,12 @@ import loader from '../../assets/svg/loader.svg';
 
 const Loader = () => {
 	return (
-		<div className='h-full bg-black bg-opacity-50 z-[999999] flex justify-center items-center flex-col w-full absolute'>
-			<div>
-				<img src={loader} alt='loader' />
+		<div className='flex justify-center items-center flex-col w-full'>
+			<div className='w-[75px] h-[75px]'>
+				<img src={loader} alt='loader' className='flex self-center' />
 			</div>
 			<div>
-				<h2 className='text-black text-[35px]'>Loading...</h2>
+				<h2 className='text-black text-[25px]'>Loading...</h2>
 			</div>
 		</div>
 	);

@@ -38,7 +38,7 @@ const CartProduct = ({ product }: CartProductProps) => {
 
 				<div className={s.cart__product_info}>
 					<div>
-						<Link to={`/product/${product.id}`}>
+						<Link to={`/main/product/${product.id}`}>
 							<span className={s.cart__product_title}>{product.title}</span>
 						</Link>
 					</div>

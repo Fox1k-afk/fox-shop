@@ -9,6 +9,7 @@ import {
 import emptyHeart from '../../../../assets/svg/emptyheart.svg';
 import fullHeart from '../../../../assets/svg/fullheart.svg';
 import s from '../Main.module.css';
+import { Link } from 'react-router-dom';
 
 interface ProductProps {
 	product: IProduct;
@@ -34,9 +35,9 @@ const Product = ({ product }: ProductProps) => {
 			<div className={s.product_card__container}>
 				<div className={s.product_card__image_container}>
 					<div className={s.product_card__main_image}>
-						<a href={`/product/${product.id}`}>
+						<Link to={`/main/product/${product.id}`}>
 							<img src={product.image} alt={product.title} />
-						</a>
+						</Link>
 					</div>
 
 					{like ? (

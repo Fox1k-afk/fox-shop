@@ -10,7 +10,7 @@ export const authRoutes = [{ path: '/profile', Component: Profile }];
 export const publicRoutes = [
 	{ path: '/main', Component: Main },
 	{ path: '/search', Component: Search },
-	{ path: '/cart', Component: Cart },
-	{ path: '/product/:id', Component: SoloProduct },
-	{ path: '/favorites', Component: Favorites },
+	{ path: '/main/cart', Component: Cart },
+	{ path: '/main/product/:id', Component: SoloProduct },
+	{ path: '/main/favorites', Component: Favorites },
 ];

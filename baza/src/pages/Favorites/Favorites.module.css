@@ -47,5 +47,7 @@
 }
 
 .favorites__product_catalog {
-	@apply mt-0 ml-0 mr-[20px] mb-[20px] lg:w-[calc(25%-15px)];
+	@apply mt-0 ml-0 mr-[20px] mb-[20px]
+	max-lapt:w-[calc(33.33%-20px)]
+	max-smFooScr:w-[calc(50%-20px)];
 }

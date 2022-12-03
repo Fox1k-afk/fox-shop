@@ -107,13 +107,13 @@ const UpperNav = () => {
 				</div>
 
 				<div className={styles.icon_button}>
-					<Link to={'/favorites'}>
+					<Link to={'/main/favorites'}>
 						<img src={favorite} alt='favorite' className='w-[28px]' />
 					</Link>
 				</div>
 
 				<div className={styles.icon_button}>
-					<Link to={'/cart'}>
+					<Link to={'/main/cart'}>
 						<img src={carT} alt='cart' className='w-[30px]' />
 						<div className='absolute bg-white text-black rounded-2xl w-[16px] h-[16px] font-medium text-[11px] -top-[5px] -right-[15px] flex items-center justify-center'>
 							{cartTotalQuantity}

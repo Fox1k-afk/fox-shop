@@ -18,7 +18,9 @@
 }
 
 .complete_look {
-	@apply cursor-pointer flex absolute items-center justify-center h-[27px] bottom-[10px] left-[10px] p-[8px] z-[2] bg-[hsla(0,0%,100%,.5)];
+	@apply cursor-pointer flex absolute items-center justify-center h-[27px] bottom-[10px] left-[10px] p-[8px] z-[2] bg-[hsla(0,0%,100%,.5)]
+	max-notebook:bottom-[50px]
+	max-timelap:bottom-[70px];
 }
 
 .complete_look p {

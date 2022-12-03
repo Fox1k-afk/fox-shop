@@ -10,8 +10,6 @@ const NewClothesBlock = () => {
 
 	return (
 		<div className={s.main__content_item}>
-			{isLoading && <Loader />}
-
 			<div className={s.main__title_container}>
 				<div className={s.underlined_title__container}>
 					<span>New products</span>
@@ -20,6 +18,7 @@ const NewClothesBlock = () => {
 
 			<div>
 				<div className={s.main__products_container}>
+					{isLoading && <Loader />}
 					{products?.map((product) => (
 						<Product product={product} key={product.id} />
 					))}

@@ -25,7 +25,7 @@ function SampleNextArrow(props: any) {
 					height: '20px',
 					width: '20px',
 					cursor: 'pointer',
-					zIndex: '20',
+
 					background: 'black',
 					borderRadius: '50%',
 				}}
@@ -54,7 +54,7 @@ function SamplePrevArrow(props: any) {
 				height: '20px',
 				width: '20px',
 				cursor: 'pointer',
-				zIndex: '20',
+
 				background: 'black',
 				borderRadius: '50%',
 			}}
@@ -68,12 +68,36 @@ const DiscountsSlider = () => {
 
 	const settings = {
 		infinite: false,
+		mobileFirst: true,
 		speed: 500,
 		slidesToShow: 4,
 		slidesToScroll: 4,
 		initialSlide: 0,
 		nextArrow: <SampleNextArrow />,
 		prevArrow: <SamplePrevArrow />,
+		responsive: [
+			{
+				breakpoint: 1440,
+				settings: {
+					slidesToShow: 4,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+				},
+			},
+		],
 	};
 
 	return (

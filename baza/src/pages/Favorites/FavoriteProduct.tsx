@@ -27,7 +27,7 @@ const FavoriteProduct = ({ product }: FavoriteProductProps) => {
 			<div className={sm.product_card__container}>
 				<div className={sm.product_card__image_container}>
 					<div className={sm.product_card__main_image}>
-						<Link to={`/product/${product.id}`}>
+						<Link to={`/main/product/${product.id}`}>
 							<img src={product.image} alt='productImg' />
 						</Link>
 					</div>

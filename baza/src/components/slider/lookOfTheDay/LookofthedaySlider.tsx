@@ -32,7 +32,7 @@ function SampleNextArrow(props: any) {
 					height: '20px',
 					width: '20px',
 					cursor: 'pointer',
-					zIndex: '20',
+
 					background: 'black',
 					borderRadius: '50%',
 				}}
@@ -61,7 +61,7 @@ function SamplePrevArrow(props: any) {
 				height: '20px',
 				width: '20px',
 				cursor: 'pointer',
-				zIndex: '20',
+
 				background: 'black',
 				borderRadius: '50%',
 			}}
@@ -80,6 +80,29 @@ const LookofthedaySlider = () => {
 		prevArrow: <SamplePrevArrow />,
 		swipeToSlide: false,
 		cssEase: 'linear',
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 5,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				},
+			},
+		],
 	};
 	return (
 		<Slider {...settings}>

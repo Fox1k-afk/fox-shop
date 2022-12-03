@@ -4,9 +4,16 @@ import loupe from '../../assets/svg/loupe-black.svg';
 import s from './Search.module.css';
 import { shopAPI } from '../../store/services/ShopService';
 import Product from '../../components/layout/main/newClothes/Product';
+import Loader from '../../components/universal/Loader';
+import ErrorMessage from '../../components/universal/ErrorMessage';
 
 const Search = () => {
-	const { data: allProducts } = shopAPI.useSortProductsQuery('');
+	const {
+		data: allProducts,
+		isLoading,
+		error,
+	} = shopAPI.useSortProductsQuery('');
+
 	const [value, setValue] = useState('');
 
 	const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,6 +61,8 @@ const Search = () => {
 
 					<div>
 						<div className={s.searcpage__products_container}>
+							{isLoading && <Loader />}
+							{error && <ErrorMessage errMsg={'something went wrong'} />}
 							{allProducts?.map((product) => (
 								<Product product={product} key={product.id} />
 							))}
