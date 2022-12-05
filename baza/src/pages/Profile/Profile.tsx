@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useAppDispatch } from '../../hooks/redux';
 import { shopAPI } from '../../store/services/ShopService';
-import { logoutUser } from '../../store/slices/AuthSlice';
+import { logoutUser } from '../../store/slices/authSlice';
 import s from './Profile.module.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

@@ -178,3 +178,7 @@
 .side_bar__links {
 	@apply border-t-[1px] border-r-neutral-500 w-[370px] min-w-[370px] h-[calc(100%-61px)] pt-[20px] px-0 pb-[15px] overflow-y-auto scroll-smooth bg-black flex flex-col justify-between;
 }
+
+.cart__quantity {
+	@apply absolute bg-white text-black rounded-2xl w-[16px] h-[16px] font-medium text-[11px] -top-[5px] -right-[15px] flex items-center justify-center;
+}

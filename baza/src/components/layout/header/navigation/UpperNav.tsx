@@ -1,24 +1,25 @@
 import React, { useContext, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 
-import person from '../../../../assets/images/icons8-user-25.png';
 import favorite from '../../../../assets/images/favorite.png';
 import carT from '../../../../assets/images/icons8-shopping-cart-25.png';
+import person from '../../../../assets/images/icons8-user-25.png';
 import registr from '../../../../assets/images/registr.png';
 import logoUA from '../../../../assets/svg/I_stand_with_Ukraine_banner.svg';
 import loup from '../../../../assets/svg/icons8-search.svg';
-import styles from '../Header.module.css';
 import { LoginContext } from '../../../../context/ProfileContext';
-import { SearchContext } from '../../../../context/SearchContext';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
-import { getTotals } from '../../../../store/slices/CartSlice';
+import { getTotals } from '../../../../store/slices/cartSlice';
+import { openModal } from '../../../../store/slices/modalSlice';
+import Modal from '../../../modals/_Modal';
 import LoginRegist from '../../../modals/login/LoginRegist';
 import SearchProduct from '../../../modals/SearchProduct';
-import Modal from '../../../modals/_Modal';
+import styles from '../Header.module.css';
 
 const UpperNav = () => {
 	const dispatch = useAppDispatch();
 	const cart = useAppSelector((state) => state.cart);
+	const { search } = useAppSelector((state) => state.modal);
 
 	useEffect(() => {
 		dispatch(getTotals());
@@ -27,12 +28,6 @@ const UpperNav = () => {
 	const auth = useAppSelector((state) => state.auth);
 	const { cartTotalQuantity } = useAppSelector((state) => state.cart);
 	const navigate = useNavigate();
-
-	const {
-		modal: search,
-		open: searchOpen,
-		close: searchClose,
-	} = useContext(SearchContext);
 
 	const {
 		modal: login,
@@ -45,8 +40,8 @@ const UpperNav = () => {
 			className={`${styles.header_nav_container} ${styles.header_nav_container_fullW}`}
 		>
 			{search && (
-				<Modal onClose={searchClose}>
-					<SearchProduct onClose={searchClose} />
+				<Modal>
+					<SearchProduct />
 				</Modal>
 			)}
 
@@ -85,7 +80,11 @@ const UpperNav = () => {
 				</a>
 
 				<div className={styles.icon_button}>
-					<button onClick={searchOpen}>
+					<button
+						onClick={() => {
+							dispatch(openModal());
+						}}
+					>
 						<img src={loup} alt='loup' className=' flex items-center w-[25px] ' />
 					</button>
 				</div>
@@ -115,9 +114,7 @@ const UpperNav = () => {
 				<div className={styles.icon_button}>
 					<Link to={'/main/cart'}>
 						<img src={carT} alt='cart' className='w-[30px]' />
-						<div className='absolute bg-white text-black rounded-2xl w-[16px] h-[16px] font-medium text-[11px] -top-[5px] -right-[15px] flex items-center justify-center'>
-							{cartTotalQuantity}
-						</div>
+						<div className={styles.cart__quantity}>{cartTotalQuantity}</div>
 					</Link>
 				</div>
 			</div>

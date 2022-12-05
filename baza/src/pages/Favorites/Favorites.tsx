@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { useAppSelector, useAppDispatch } from '../../hooks/redux';
-import { clearFavorites } from '../../store/slices/FavoritesSlice';
+import { clearFavorites } from '../../store/slices/favoritesSlice';
 
 import favoritesEmpty from '../../assets/svg/favorites-empty.svg';
 import FavoriteProduct from './FavoriteProduct';

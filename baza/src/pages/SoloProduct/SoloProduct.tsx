@@ -13,7 +13,7 @@ import { shopAPI } from '../../store/services/ShopService';
 import {
 	addToFavorites,
 	removeFromFavorites,
-} from '../../store/slices/FavoritesSlice';
+} from '../../store/slices/favoritesSlice';
 import Breadcrumbs from './Breadcrumbs';
 import OrderForm from './OrderForm';
 import s from './SoloProduct.module.css';

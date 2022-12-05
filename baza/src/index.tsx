@@ -8,10 +8,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
-import { LogInState } from './context/ProfileContext';
-import { SearchState } from './context/SearchContext';
 import { store } from './store';
-import { loadUser } from './store/slices/AuthSlice';
+import { LogInState } from './context/ProfileContext';
+import { loadUser } from './store/slices/authSlice';
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
@@ -22,11 +21,9 @@ store.dispatch(loadUser(null));
 root.render(
 	<Provider store={store}>
 		<BrowserRouter>
-			<SearchState>
-				<LogInState>
-					<App />
-				</LogInState>
-			</SearchState>
+			<LogInState>
+				<App />
+			</LogInState>
 		</BrowserRouter>
 	</Provider>
 );

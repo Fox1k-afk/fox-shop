@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 
-export interface cartState {
+export interface ICartState {
 	cartItems: any[];
 	cartTotalQuantity: number;
 	cartTotalAmount: number;
@@ -9,7 +9,7 @@ export interface cartState {
 
 const item = localStorage.getItem('cartItems');
 
-const initialState: cartState = {
+const initialState: ICartState = {
 	cartItems: item ? JSON.parse(item) : [],
 	cartTotalQuantity: 0,
 	cartTotalAmount: 0,

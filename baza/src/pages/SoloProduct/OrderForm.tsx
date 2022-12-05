@@ -7,7 +7,7 @@ import facebook from '../../assets/svg/icons8-facebook.svg';
 import telegram from '../../assets/svg/icons8-telegram-app.svg';
 import { useAppDispatch } from '../../hooks/redux';
 import { IProduct } from '../../models/IProduct';
-import { addToCart } from '../../store/slices/CartSlice';
+import { addToCart } from '../../store/slices/cartSlice';
 import s from './SoloProduct.module.css';
 
 interface OrderFormProps {

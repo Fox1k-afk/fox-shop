@@ -8,7 +8,7 @@ import {
 	addToCart,
 	decreaseCart,
 	removeFromCart,
-} from '../../store/slices/CartSlice';
+} from '../../store/slices/cartSlice';
 import s from './Cart.module.css';
 
 interface CartProductProps {

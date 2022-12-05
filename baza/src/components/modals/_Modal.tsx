@@ -2,7 +2,7 @@ import React from 'react';
 
 interface ModalProps {
 	children: React.ReactNode;
-	onClose: () => void;
+	onClose?: () => void;
 }
 
 const Modal = ({ children }: ModalProps) => {

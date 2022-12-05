@@ -5,7 +5,7 @@ import fullHeart from '../../assets/svg/fullheart.svg';
 import sm from '../../components/layout/main/Main.module.css';
 import { useAppDispatch } from '../../hooks/redux';
 import { IProduct } from '../../models/IProduct';
-import { removeFromFavorites } from '../../store/slices/FavoritesSlice';
+import { removeFromFavorites } from '../../store/slices/favoritesSlice';
 import s from './Favorites.module.css';
 
 interface FavoriteProductProps {

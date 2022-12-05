@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import loupe from '../../assets/svg/loupe-black.svg';
+import { useAppDispatch } from '../../hooks/redux';
+import { closeModal } from '../../store/slices/modalSlice';
 
-interface SearchProductProps {
-	onClose: () => void;
-}
-
-const SearchProduct = ({ onClose }: SearchProductProps) => {
+const SearchProduct = () => {
 	const [value, setValue] = useState('');
 	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
 
 	const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setValue(e.target.value);
@@ -20,7 +19,12 @@ const SearchProduct = ({ onClose }: SearchProductProps) => {
 					poshuk
 				</div>
 
-				<button className='text-white text-[30px]' onClick={onClose}>
+				<button
+					className='text-white text-[30px]'
+					onClick={() => {
+						dispatch(closeModal());
+					}}
+				>
 					X
 				</button>
 			</div>
@@ -45,7 +49,7 @@ const SearchProduct = ({ onClose }: SearchProductProps) => {
 					/>
 
 					<button
-						onClick={() => [navigate('/search'), onClose()]}
+						onClick={() => [navigate('/search'), dispatch(closeModal())]}
 						className=' absolute top-0 right-0 bottom-0 p-[12px] my-auto mx-0'
 					>
 						<div>

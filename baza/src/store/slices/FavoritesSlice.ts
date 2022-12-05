@@ -1,12 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-export interface favoritesState {
-	favoriteItems: any[];
+import { IProduct } from '../../models/IProduct';
+export interface IFavoritesState {
+	favoriteItems: IProduct[];
 }
 
 const item = localStorage.getItem('favoriteItems');
 
-const initialState: favoritesState = {
+const initialState: IFavoritesState = {
 	favoriteItems: item ? JSON.parse(item) : [],
 };
 

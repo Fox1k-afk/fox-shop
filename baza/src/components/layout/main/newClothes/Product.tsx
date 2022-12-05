@@ -5,7 +5,7 @@ import { IProduct } from '../../../../models/IProduct';
 import {
 	addToFavorites,
 	removeFromFavorites,
-} from '../../../../store/slices/FavoritesSlice';
+} from '../../../../store/slices/favoritesSlice';
 import emptyHeart from '../../../../assets/svg/emptyheart.svg';
 import fullHeart from '../../../../assets/svg/fullheart.svg';
 import s from '../Main.module.css';

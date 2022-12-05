@@ -2,13 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { loginUser } from './ActionCreators';
 
-interface UserState {
+interface IUserState {
 	userToken: string | null;
 	loginStatus: string;
 	loginError: string;
 	loggined?: boolean;
 }
-const initialState: UserState = {
+const initialState: IUserState = {
 	userToken: localStorage.getItem('userToken'),
 	loginStatus: '',
 	loginError: '',

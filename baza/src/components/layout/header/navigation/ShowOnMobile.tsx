@@ -8,8 +8,8 @@ import registr from '../../../../assets/images/registr.png';
 import loop from '../../../../assets/svg/icons8-search.svg';
 import phone from '../../../../assets/svg/phone-call-svgrepo-com.svg';
 import { LoginContext } from '../../../../context/ProfileContext';
-import { SearchContext } from '../../../../context/SearchContext';
-import { useAppSelector } from '../../../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
+import { openModal } from '../../../../store/slices/modalSlice';
 import Modal from '../../../modals/_Modal';
 import LoginRegist from '../../../modals/login/LoginRegist';
 import SearchProduct from '../../../modals/SearchProduct';
@@ -18,13 +18,10 @@ import styles from '../Header.module.css';
 const ShowOnMobile = () => {
 	const { cartTotalQuantity } = useAppSelector((state) => state.cart);
 	const auth = useAppSelector((state) => state.auth);
-	const navigate = useNavigate();
+	const { search } = useAppSelector((state) => state.modal);
 
-	const {
-		modal: search,
-		open: searchOpen,
-		close: searchClose,
-	} = useContext(SearchContext);
+	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
 
 	const {
 		modal: login,
@@ -35,8 +32,8 @@ const ShowOnMobile = () => {
 	return (
 		<div className={styles.showOnMobile}>
 			{search && (
-				<Modal onClose={searchClose}>
-					<SearchProduct onClose={searchClose} />
+				<Modal>
+					<SearchProduct />
 				</Modal>
 			)}
 
@@ -49,7 +46,12 @@ const ShowOnMobile = () => {
 				<img src={phone} alt='phone' className='bg-white w-[20px]' />
 			</div>
 
-			<button onClick={searchOpen} className={styles.header__icon_button}>
+			<button
+				onClick={() => {
+					dispatch(openModal());
+				}}
+				className={styles.header__icon_button}
+			>
 				<img src={loop} alt='loop' className='w-[25px]' />
 			</button>
 
@@ -78,9 +80,7 @@ const ShowOnMobile = () => {
 			<div className={styles.header__icon_button}>
 				<Link to={'/main/cart'}>
 					<img src={carT} alt='cart' className='w-[30px]' />
-					<div className='absolute bg-white text-black rounded-2xl w-[16px] h-[16px] font-medium text-[11px] -top-[5px] -right-[15px] flex items-center justify-center'>
-						{cartTotalQuantity}
-					</div>
+					<div className={styles.cart__quantity}>{cartTotalQuantity}</div>
 				</Link>
 			</div>
 		</div>
