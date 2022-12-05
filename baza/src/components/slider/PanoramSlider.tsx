@@ -36,7 +36,7 @@ function SamplePrevArrow(props: any) {
 				color: 'transparent',
 				background: 'transparent',
 				left: '30px',
-				zIndex: '5',
+				zIndex: '1',
 			}}
 			onClick={onClick}
 		></button>
@@ -79,9 +79,9 @@ const ParnyamSlider = () => {
 						<img src={slide2} alt='carousel-slide2' />
 					</Slider>
 
-					<div className=' absolute bottom-[35px] left-[calc(50%-56px)] cursor-pointer w-[111px]'>
+					<div className=' absolute bottom-[35px] left-[calc(50%-56px)] cursor-pointer w-[111px] max-tabl:w-[80px] max-tabl:bottom-[15px] max-mobil:w-[60px] max-mobil:bottom-[7.5px]'>
 						<Link to={'/'}>
-							<button className=' bg-black text-white p-[10px] font-medium uppercase tracking-[1.5px] w-full text-[12px] hover:opacity-80'>
+							<button className=' bg-black text-white p-[10px] font-medium uppercase tracking-[1.5px] w-full text-[12px] hover:opacity-80 max-tabl:p-[5px] max-tabl:text-[11px] max-mobil:p-[2.5px] max-mobil:text-[7px]'>
 								Forward
 							</button>
 						</Link>

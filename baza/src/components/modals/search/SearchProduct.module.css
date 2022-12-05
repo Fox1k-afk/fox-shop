@@ -1,0 +1,50 @@
+.search_container {
+	@apply max-w-[770px] w-[770px] mb-[200px]
+	max-tablet:w-full;
+}
+
+.search_title_container {
+	@apply flex justify-between items-center mb-[25px];
+}
+
+.search_title {
+	@apply text-white uppercase tracking-[1.5px] text-[20px]  ml-[20px]
+	max-mobil:text-[18px] max-mobil:mt-0 max-mobil:mr-0 max-mobil:mb-[10px] max-mobil:ml-[15px];
+}
+
+.search_button {
+	@apply text-white text-[30px];
+}
+
+.search__form {
+	@apply flex w-full 
+	max-smFooScr:flex-col;
+}
+
+.search__select {
+	@apply w-[175px] min-w-[175px] border-r-[1px] border-r-neutral-400 cursor-pointer relative flex items-center py-[25px] px-[20px] bg-white
+	max-smFooScr:w-full max-smFooScr:border-b-[#f0f3f2] max-smFooScr:p-[20px]
+	max-mobil:py-[15px] max-mobil:px-[20px];
+}
+
+.search__selected {
+	@apply bg-transparent uppercase text-[13px] select-none font-bold tracking-[1.2px]
+	after:absolute after:top-[30px] after:mt-auto after:mr-[20px] after:mb-auto after:ml-0 after:right-0 after:w-0 
+	after:h-0 after:border-[5px] after:border-solid after:border-transparent after:border-t-black
+	max-mobil:text-[12px];
+}
+
+.search__input {
+	@apply relative w-full;
+}
+
+.search__input input {
+	@apply bg-white w-full border-none py-[25px] pr-[50px] pl-[30px] text-[16px] tracking-[2px] outline-none
+	max-smFooScr:py-[15px]
+	max-mobil:py-[10px];
+}
+
+.search__input_button {
+	@apply absolute top-0 right-0 bottom-0 p-[12px] my-auto mx-0
+	max-mobil:py-0 max-mobil:px-[12px];
+}

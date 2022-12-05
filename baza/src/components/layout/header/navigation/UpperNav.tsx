@@ -13,7 +13,7 @@ import { getTotals } from '../../../../store/slices/cartSlice';
 import { openModal } from '../../../../store/slices/modalSlice';
 import Modal from '../../../modals/_Modal';
 import LoginRegist from '../../../modals/login/LoginRegist';
-import SearchProduct from '../../../modals/SearchProduct';
+import SearchProduct from '../../../modals/search/SearchProduct';
 import styles from '../Header.module.css';
 
 const UpperNav = () => {

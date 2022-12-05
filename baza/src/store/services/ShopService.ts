@@ -15,16 +15,13 @@ export const shopAPI = createApi({
 				},
 			}),
 		}),
-		sortProducts: build.query<IProduct[], any>({
-			query: () => ({
-				url: '/products?sort=desc',
-			}),
-		}),
+
 		fetchUser: build.query<IUser | undefined, any>({
 			query: () => ({
 				url: '/users/1',
 			}),
 		}),
+
 		fetchProduct: build.query<IProduct, any>({
 			query: (id) => ({
 				url: `products/${id}`,

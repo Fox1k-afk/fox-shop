@@ -1,5 +1,6 @@
 .fashion_card__container {
-	@apply relative h-[660px] pl-[10px] pr-[10px];
+	@apply relative h-[660px] pl-[10px] pr-[10px]
+	max-mobil:h-auto;
 }
 
 .fashion_card__image_container {

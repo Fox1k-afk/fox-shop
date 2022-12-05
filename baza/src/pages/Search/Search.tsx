@@ -1,23 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import loupe from '../../assets/svg/loupe-black.svg';
 import s from './Search.module.css';
-import { shopAPI } from '../../store/services/ShopService';
 import Product from '../../components/layout/main/newClothes/Product';
 import Loader from '../../components/universal/Loader';
-import ErrorMessage from '../../components/universal/ErrorMessage';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import SearchFilter from 'react-filter-search';
+import { IProduct } from '../../models/IProduct';
+import axios, { AxiosError } from 'axios';
 
 const Search = () => {
-	const {
-		data: allProducts,
-		isLoading,
-		error,
-	} = shopAPI.useSortProductsQuery('');
+	const [searchInput, setSearchInput] = useState('');
+	const [productData, setProductData] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
-	const [value, setValue] = useState('');
+	console.log(productData);
+
+	const getResponse = async () => {
+		setIsLoading(true);
+		try {
+			const res: any = await axios.get(
+				'https://fakestoreapi.com/products?sort=desc'
+			);
+
+			setProductData(res.data);
+		} catch (error) {
+			const err = error as AxiosError;
+
+			console.log(err.response?.data);
+		}
+		setIsLoading(false);
+	};
+
+	useEffect(() => {
+		getResponse();
+	}, []);
 
 	const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setValue(e.target.value);
+		setSearchInput(e.target.value);
 	};
 
 	return (
@@ -43,11 +64,11 @@ const Search = () => {
 
 							<div className={s.search__input}>
 								<input
-									value={value}
+									value={searchInput}
 									onChange={changeHandler}
 									type='text'
 									className='bg-[#f9f9f9]'
-									placeholder='Doesn"t work ;('
+									placeholder='Type something...'
 								/>
 
 								<button className=' absolute top-0 right-0 bottom-0 p-[12px] my-auto mx-0'>
@@ -62,10 +83,16 @@ const Search = () => {
 					<div>
 						<div className={s.searcpage__products_container}>
 							{isLoading && <Loader />}
-							{error && <ErrorMessage errMsg={'something went wrong'} />}
-							{allProducts?.map((product) => (
-								<Product product={product} key={product.id} />
-							))}
+
+							<SearchFilter
+								value={searchInput}
+								data={productData}
+								renderResults={(results: IProduct[]) =>
+									results.map((product: IProduct) => (
+										<Product product={product} key={product.id} />
+									))
+								}
+							/>
 						</div>
 					</div>
 				</div>

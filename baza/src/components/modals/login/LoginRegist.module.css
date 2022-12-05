@@ -7,11 +7,13 @@
 }
 
 .modal__movable_active {
-	@apply left-0 right-0 opacity-100;
+	@apply left-0 right-0 opacity-100
+	max-smFooScr:w-full;
 }
 
 .modal__container {
-	@apply p-[50px];
+	@apply p-[50px]
+	max-smFooScr:p-[25px] max-smFooScr:max-h-[550px];
 }
 
 .modal__title_container {
@@ -34,7 +36,7 @@
 
 .modal__form_container {
 	@apply flex
-	max-tablet:flex-col;
+	max-smFooScr:flex-col;
 }
 
 .modal__form {
@@ -42,7 +44,8 @@
 }
 
 .modal__form_sign_in {
-	@apply w-[220px] mt-0 mr-[50px] mb-[50px] ml-0;
+	@apply w-[220px] mt-0 mr-[50px] mb-[50px] ml-0
+	max-smFooScr:w-full;
 }
 
 .modal__form_title {

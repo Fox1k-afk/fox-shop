@@ -1,10 +1,10 @@
 .main__wrapper {
-	@apply relative
-	max-tablet:mt-[61px];
+	@apply relative;
 }
 
 .main__banner_container {
-	@apply mb-[30px];
+	@apply mb-[30px]
+	max-tabl:mt-[61px];
 }
 
 .banner_carousel__wrapper {
@@ -37,11 +37,15 @@
 }
 
 .main__btn {
-	@apply cursor-pointer w-[111px] absolute bottom-[20px] left-[calc(50%-56px)];
+	@apply cursor-pointer w-[111px] absolute bottom-[20px] left-[calc(50%-56px)]
+	max-tabl:w-[80px] max-tabl:bottom-[10px]
+	max-mobil:w-[60px] max-mobil:bottom-[5px] max-mobil:left-10;
 }
 
 .main_buttonS {
-	@apply p-[10px] font-medium uppercase tracking-[1.5px] w-full text-[12px] bg-black text-white;
+	@apply p-[10px] font-medium uppercase tracking-[1.5px] w-full text-[12px] bg-black text-white
+	max-tabl:p-[5px] max-tabl:text-[12px]
+	max-mobil:p-[2px] max-mobil:text-[9px];
 }
 
 .main_buttonS:hover {
@@ -119,7 +123,7 @@
 }
 
 .product_card__like {
-	@apply w-[26px] h-[26px] rounded-[50%] flex items-center justify-center absolute top-[15px] right-[15px] bg-white z-[10];
+	@apply w-[26px] h-[26px] rounded-[50%] flex items-center justify-center absolute top-[15px] right-[15px] bg-white z-[2];
 }
 
 .product_card__discount {
