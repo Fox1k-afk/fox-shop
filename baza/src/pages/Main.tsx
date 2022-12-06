@@ -9,8 +9,6 @@ import s from '../components/layout/main/Main.module.css';
 import PanoramSlider from '../components/slider/PanoramSlider';
 import ScrollButton from '../components/universal/ScrollButton';
 
-// import Loader from '../components/Loader';
-// import upArrow from '../assets/svg/up-arrow.svg';
 const Main = () => {
 	return (
 		<div>

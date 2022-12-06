@@ -39,6 +39,7 @@ const SearchProduct = () => {
 						onChange={changeHandler}
 						type='text'
 						placeholder='click on the loup to go to the search page >>>>>>>>>>'
+						disabled
 					/>
 
 					<button

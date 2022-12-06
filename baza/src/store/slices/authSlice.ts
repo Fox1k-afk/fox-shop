@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { loginUser } from './ActionCreators';
 
@@ -18,7 +18,7 @@ const authSlice = createSlice({
 	name: 'auth',
 	initialState,
 	reducers: {
-		loadUser(state, action): any {
+		loadUser(state: any, action: PayloadAction) {
 			const userToken = state.userToken;
 
 			if (userToken) {
@@ -30,7 +30,7 @@ const authSlice = createSlice({
 			}
 		},
 
-		logoutUser(state, action) {
+		logoutUser(state, action: PayloadAction) {
 			localStorage.removeItem('userToken');
 			return {
 				...state,

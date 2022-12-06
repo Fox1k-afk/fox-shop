@@ -17,8 +17,7 @@
 }
 
 .modal__title_container {
-	@apply flex justify-between
-	max-mobil:justify-start;
+	@apply flex justify-between;
 }
 
 .underlined_title__container {
@@ -45,11 +44,12 @@
 
 .modal__form_sign_in {
 	@apply w-[220px] mt-0 mr-[50px] mb-[50px] ml-0
-	max-smFooScr:w-full;
+	max-smFooScr:w-full max-smFooScr:text-center;
 }
 
 .modal__form_title {
-	@apply text-[11px] font-bold uppercase mb-[30px] tracking-[1.2px];
+	@apply text-[11px] font-bold uppercase mb-[30px] tracking-[1.2px]
+	max-smFooScr:text-center;
 }
 
 .modal__form_input {
@@ -69,11 +69,12 @@
 }
 
 .modal__social {
-	@apply w-1/2 mb-[30px];
+	@apply w-1/2 mb-[30px]
+max-smFooScr:flex max-smFooScr:items-center max-smFooScr:justify-center;
 }
 
 .modal__reset {
-	@apply flex items-center justify-center;
+	@apply flex items-center justify-center flex-col;
 }
 
 .modal__reset button {

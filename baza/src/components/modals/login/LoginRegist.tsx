@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import google from '../../../assets/images/google.png';
 import facebook from '../../../assets/svg/icons8-facebook.svg';
+import { LoginContext } from '../../../context/ProfileContext';
 import { useAppSelector } from '../../../hooks/redux';
 import LoginForm from './LoginForm';
 import s from './LoginRegist.module.css';
@@ -12,6 +15,32 @@ interface LoginRegistProps {
 
 const LoginRegist = ({ onClose }: LoginRegistProps) => {
 	const auth = useAppSelector((state) => state.auth);
+	const [showPswrd, setShowPswrd] = useState(false);
+
+	const { close: loginClose } = useContext(LoginContext);
+
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		const toastik = () => {
+			toast.success('🦄 You are loggined now!', {
+				position: 'bottom-left',
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: 'dark',
+			});
+		};
+
+		if (auth.loggined) {
+			loginClose();
+			navigate('/main');
+			toastik();
+		}
+	}, [auth.loggined, loginClose, navigate]);
 
 	return (
 		<div className={s.modal__main_container}>
@@ -60,9 +89,24 @@ const LoginRegist = ({ onClose }: LoginRegistProps) => {
 								</div>
 							</div>
 						</div>
-
 						<div className={s.modal__reset}>
-							<button>Forgot password</button>
+							<button
+								onClick={() => {
+									setShowPswrd((prev) => !prev);
+								}}
+							>
+								Forgot password
+							</button>
+							{showPswrd && (
+								<div className=' mt-[15px] flex flex-col'>
+									<p className='pb-2'>
+										<span className='text-blue-400'>Username:</span> johnd
+									</p>
+									<p>
+										<span className='text-yellow-300'>Password:</span> m38rmF$
+									</p>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>

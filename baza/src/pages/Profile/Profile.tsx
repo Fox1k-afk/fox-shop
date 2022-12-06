@@ -38,7 +38,7 @@ const Profile = () => {
 					<div className={s.profile__subtitle}>
 						<button
 							onClick={() => {
-								dispatch(logoutUser(null));
+								dispatch(logoutUser());
 								navigate('/main');
 								toastkik();
 							}}

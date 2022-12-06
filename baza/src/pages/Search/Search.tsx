@@ -9,13 +9,14 @@ import Loader from '../../components/universal/Loader';
 import SearchFilter from 'react-filter-search';
 import { IProduct } from '../../models/IProduct';
 import axios, { AxiosError } from 'axios';
+import { useDebounce } from '../../hooks/debounce';
 
 const Search = () => {
 	const [searchInput, setSearchInput] = useState('');
 	const [productData, setProductData] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
-	console.log(productData);
+	const debounce = useDebounce(searchInput);
 
 	const getResponse = async () => {
 		setIsLoading(true);
@@ -85,7 +86,7 @@ const Search = () => {
 							{isLoading && <Loader />}
 
 							<SearchFilter
-								value={searchInput}
+								value={debounce}
 								data={productData}
 								renderResults={(results: IProduct[]) =>
 									results.map((product: IProduct) => (

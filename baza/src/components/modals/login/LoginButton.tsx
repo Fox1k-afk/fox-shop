@@ -1,8 +1,10 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
+import { useAppSelector } from '../../../hooks/redux';
 
 const EnterButton = () => {
 	const { isValid } = useFormikContext();
+	const { loginStatus } = useAppSelector((state) => state.auth);
 
 	const btnBgClassName = isValid
 		? 'bg-black text-white'
@@ -16,7 +18,9 @@ const EnterButton = () => {
 	return (
 		<div>
 			<button type='submit' disabled={!isValid} className={btnClass.join(' ')}>
-				Login
+				{loginStatus === '' && 'Login'}
+				{loginStatus === 'pending' && 'Pending...'}
+				{loginStatus === 'rejected' && 'Try again'}
 			</button>
 		</div>
 	);

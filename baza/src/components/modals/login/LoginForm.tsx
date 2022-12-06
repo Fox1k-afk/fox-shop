@@ -1,15 +1,13 @@
+import 'react-toastify/dist/ReactToastify.css';
+
 import { ErrorMessage, Field, Form, Formik, getIn } from 'formik';
-import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import React, { useState } from 'react';
 import * as Yup from 'yup';
 
-import { LoginContext } from '../../../context/ProfileContext';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { useAppDispatch } from '../../../hooks/redux';
 import { loginUser } from '../../../store/slices/ActionCreators';
 import LoginButton from './LoginButton';
 import s from './LoginRegist.module.css';
-import 'react-toastify/dist/ReactToastify.css';
 
 const INITIAL_INPUT_VALUE = {
 	username: 'johnd',
@@ -27,34 +25,9 @@ const FORM_VALIDATION_SCHEMA = {
 };
 
 const LoginForm = () => {
-	const { close: loginClose } = useContext(LoginContext);
-	const auth = useAppSelector((state) => state.auth);
 	const [inpVal] = useState(INITIAL_INPUT_VALUE);
+
 	const dispatch = useAppDispatch();
-	const navigate = useNavigate();
-
-	console.log(auth);
-
-	useEffect(() => {
-		const toastik = () => {
-			toast.success('🦄 You are loggined now!', {
-				position: 'bottom-left',
-				autoClose: 5000,
-				hideProgressBar: false,
-				closeOnClick: true,
-				pauseOnHover: true,
-				draggable: true,
-				progress: undefined,
-				theme: 'dark',
-			});
-		};
-
-		if (auth.loggined) {
-			loginClose();
-			navigate('/main');
-			toastik();
-		}
-	}, [auth.loggined, loginClose, navigate]);
 
 	function LoginInput({ field, form: { errors } }: any) {
 		return (
@@ -95,7 +68,6 @@ const LoginForm = () => {
 		password: string;
 	}
 	function onSubmit(values: IValues) {
-		console.log(JSON.stringify(values, null, 2));
 		dispatch(loginUser(values));
 	}
 

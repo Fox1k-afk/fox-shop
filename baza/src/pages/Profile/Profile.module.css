@@ -3,7 +3,8 @@
 }
 
 .profile__content_container {
-	@apply w-full max-w-[1210px] mt-0 mb-[75px] mx-auto pt-[40px] px-[20px] pb-0;
+	@apply w-full max-w-[1210px] mt-0 mb-[75px] mx-auto pt-[40px] px-[20px] pb-0
+	max-tabl:mt-[35px];
 }
 
 .page_title {
