@@ -3,8 +3,16 @@
 }
 
 .main__banner_container {
-	@apply mb-[30px]
+	@apply mb-[30px] 
 	max-tabl:mt-[61px];
+}
+
+.slick-slider {
+	@apply opacity-0 invisible transition-opacity duration-1000;
+}
+
+.slick-slider.slick-initialized {
+	@apply visible opacity-100;
 }
 
 .banner_carousel__wrapper {

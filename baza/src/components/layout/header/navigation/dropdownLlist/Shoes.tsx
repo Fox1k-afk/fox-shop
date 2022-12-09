@@ -10,13 +10,13 @@ const Shoes = () => {
 				<div className={styles.drop_categories}>
 					<div className={styles.drop_category}>
 						<Link to={'/'}>
-							<span className={styles.drop_title}>Winter boots</span>
+							<span className={styles.drop_title}>blank</span>
 						</Link>
 					</div>
 
 					<div className={styles.drop_category}>
 						<Link to={'/'}>
-							<span className={styles.drop_title}>Shoes, keds</span>
+							<span className={styles.drop_title}>blank</span>
 						</Link>
 					</div>
 				</div>

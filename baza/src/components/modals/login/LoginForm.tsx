@@ -10,8 +10,8 @@ import LoginButton from './LoginButton';
 import s from './LoginRegist.module.css';
 
 const INITIAL_INPUT_VALUE = {
-	username: 'johnd',
-	password: 'm38rmF$',
+	username: '',
+	password: '',
 };
 
 const FORM_VALIDATION_SCHEMA = {

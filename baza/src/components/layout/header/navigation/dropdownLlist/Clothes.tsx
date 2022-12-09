@@ -10,7 +10,7 @@ const Clothes = () => {
 				<div className={styles.drop_categories}>
 					<div className={`${styles.drop_category} ${'mb-[5px]'}`}>
 						<Link to={'/'}>
-							<span className={styles.drop_title}>Verhnij odayg</span>
+							<span className={styles.drop_title}>blank</span>
 						</Link>
 
 						<div className={styles.drop_subCategorys}>
@@ -36,13 +36,13 @@ const Clothes = () => {
 
 					<div className={styles.drop_category}>
 						<Link to={'/'}>
-							<span className={styles.drop_title}>Svitshoty, tolstovky</span>
+							<span className={styles.drop_title}>blank</span>
 						</Link>
 					</div>
 
 					<div className={`${styles.drop_category} ${'mb-[5px]'}`}>
 						<Link to={'/'}>
-							<span className={styles.drop_title}>Shtany</span>
+							<span className={styles.drop_title}>blank</span>
 						</Link>
 
 						<div className={styles.drop_subCategorys}>
@@ -68,25 +68,25 @@ const Clothes = () => {
 
 					<div className={styles.drop_category}>
 						<Link to={'/'}>
-							<span className={styles.drop_title}>Sportivny kostumes</span>
+							<span className={styles.drop_title}>blank</span>
 						</Link>
 					</div>
 
 					<div className={styles.drop_category}>
 						<Link to={'/'}>
-							<span className={styles.drop_title}>Polo i futbolki</span>
+							<span className={styles.drop_title}>blank</span>
 						</Link>
 					</div>
 
 					<div className={styles.drop_category}>
 						<Link to={'/'}>
-							<span className={styles.drop_title}>Shorty</span>
+							<span className={styles.drop_title}>blank</span>
 						</Link>
 					</div>
 
 					<div className={styles.drop_category}>
 						<Link to={'/'}>
-							<span className={styles.drop_title}>Letnie komplekty</span>
+							<span className={styles.drop_title}>blank</span>
 						</Link>
 					</div>
 				</div>

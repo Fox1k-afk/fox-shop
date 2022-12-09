@@ -34,6 +34,7 @@ const SoloProduct = () => {
 		dispatch(removeFromFavorites(product));
 		setLike(false);
 	};
+
 	return (
 		<div className={s.product__wrapper_container}>
 			<ToastContainer />

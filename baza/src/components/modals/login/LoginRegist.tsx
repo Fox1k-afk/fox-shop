@@ -95,7 +95,7 @@ const LoginRegist = ({ onClose }: LoginRegistProps) => {
 									setShowPswrd((prev) => !prev);
 								}}
 							>
-								Forgot password
+								login data are here (click me)
 							</button>
 							{showPswrd && (
 								<div className=' mt-[15px] flex flex-col'>

@@ -4,7 +4,7 @@
 
 .main_container {
 	@apply max-w-[1210px] w-full bg-black z-[5]
-	max-tabl:fixed;
+	max-tabl:fixed max-tabl:top-0;
 }
 
 .container {
@@ -140,7 +140,8 @@
 }
 
 .hamburger {
-	@apply lapt:hidden z-[4] py-[15px] pr-[15px] pl-0 inline-block cursor-pointer transition-all bg-transparent border-0;
+	@apply z-[4] py-[15px] pr-[15px] pl-0 inline-block cursor-pointer transition-all bg-transparent border-0
+ notebook:hidden;
 }
 
 .hamburger_box {
