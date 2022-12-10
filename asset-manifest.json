@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fox-shop/static/css/main.ded91789.css",
-    "main.js": "/fox-shop/static/js/main.41298e90.js",
+    "main.js": "/fox-shop/static/js/main.b9ad8623.js",
     "static/media/slide9.jpeg": "/fox-shop/static/media/slide9.fcc1794de95cd87e3b39.jpeg",
     "static/media/slide1.jpeg": "/fox-shop/static/media/slide1.d95f2d5352c9411c3433.jpeg",
     "static/media/slide5.jpeg": "/fox-shop/static/media/slide5.c315e2d739f07b1514d0.jpeg",
@@ -43,10 +43,10 @@
     "static/media/loupe-black.svg": "/fox-shop/static/media/loupe-black.76f7429a854334959fb0c7a65221884d.svg",
     "index.html": "/fox-shop/index.html",
     "main.ded91789.css.map": "/fox-shop/static/css/main.ded91789.css.map",
-    "main.41298e90.js.map": "/fox-shop/static/js/main.41298e90.js.map"
+    "main.b9ad8623.js.map": "/fox-shop/static/js/main.b9ad8623.js.map"
   },
   "entrypoints": [
     "static/css/main.ded91789.css",
-    "static/js/main.41298e90.js"
+    "static/js/main.b9ad8623.js"
   ]
 }
